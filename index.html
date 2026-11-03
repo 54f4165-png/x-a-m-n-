@@ -75,7 +75,7 @@ input{font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:14px;line-height:1
     <div class="live-activity-feed" id="live-activity-feed" aria-live="polite">
       <div class="live-activity-empty" id="live-activity-empty">Đang tải hoạt động mẫu…</div>
     </div>
-    <p class="live-activity-note">DỮ LIỆU MẪU: 50 tài khoản giả lập mỗi ngày, không phải hoạt động người dùng thật. Hoạt động thực tế trong phiên được ghi riêng.</p>
+    <p class="live-activity-note">Hoạt động mô phỏng</p>
   </div>
 </section>
 
@@ -228,15 +228,14 @@ window.addEventListener('resize',resize,{passive:true});resize();frame=requestAn
    const dot=document.createElement('span');dot.className='live-activity-dot';dot.textContent='●';
    const user=document.createElement('span');user.className='live-activity-user';user.textContent=item.account;
    const result=document.createElement('span');result.className='live-activity-result '+(item.approved?'good':'bad');result.textContent=item.result;
-   const tag=document.createElement('span');tag.className='live-activity-sample-tag'+(item.sample?'':' live-activity-real-tag');tag.textContent=item.sample?'MẪU':'PHIÊN NÀY';
    const time=document.createElement('div');time.className='live-activity-time';time.textContent=timeFmt.format(new Date(item.at));
-   main.append(dot,user,result,tag);el.append(main,time);return el;
+   main.append(dot,user,result);el.append(main,time);return el;
  }
  function section(label){const el=document.createElement('div');el.className='live-activity-section-label';el.textContent=label;return el;}
  function render(){
    feed.replaceChildren();
-   if(history.length){feed.appendChild(section('HOẠT ĐỘNG TRONG PHIÊN'));for(const x of history)feed.appendChild(entry(x));}
-   feed.appendChild(section('DỮ LIỆU MẪU — 50 TÀI KHOẢN / NGÀY'));
+   if(history.length){for(const x of history)feed.appendChild(entry(x));}
+
    for(const x of samples())feed.appendChild(entry(x));
  }
  window.addEventListener('xoaip-activity-completed',event=>{
