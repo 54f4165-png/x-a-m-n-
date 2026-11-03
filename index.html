@@ -27,7 +27,24 @@ input{font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:14px;line-height:1
 .notice{font-size:15px}.ringin{font-family:Inter,"Segoe UI",Arial,sans-serif;font-weight:850}
 @media(max-width:650px){body{font-size:12px}.heading{font-size:clamp(21px,5.5vw,28px)}.mode strong{font-size:12px}.mode small{font-size:11px}.paneltitle{font-size:15px}.tr,.cr{font-size:12px}.server{font-size:11px}.terminal{font-size:11px}.start{font-size:clamp(15px,4vw,19px)}.notice{font-size:13px}input{font-size:16px}}
 @media(max-width:380px){.heading{font-size:21px}.mode strong{font-size:11px}.tr,.cr{font-size:11px}.start{font-size:15px}}
-</style></head><body><canvas id="matrix-rain" aria-hidden="true"></canvas><main class="wrap check" id="app"><div class="window"><div class="hero"><div><div class="heading">TRUNG TÂM ĐIỀU KHIỂN</div><div class="subtitle">CHỌN CHỨC NĂNG ĐỂ BẮT ĐẦU</div><div class="modes"><button class="mode active" id="check"><span class="symbol">⬡</span><strong>KIỂM TRA TÀI KHOẢN</strong><small>Kiểm tra · Phân tích · Báo cáo</small></button><button class="mode" id="erase"><span class="symbol">⌁</span><strong>XÓA MÃ ẨN</strong><small>Xử lý · Làm sạch · Hoàn tất</small></button></div></div><div class="server">SERVER : <b>QUỐC TẾ</b><br>STATUS : <b>ONLINE</b><br>VERSION : <b>1.2</b><br>PROCESS : <b id="serverprocess">READY</b></div></div></div><section class="panel"><div class="paneltitle"><span id="statusTitle">KIỂM TRA TÀI KHOẢN</span><span class="tag" id="tag">ALERT</span></div><div class="statusgrid"><div class="table"><div class="tr"><span>Trạng thái</span><b id="state">CHỜ KIỂM TRA</b></div><div class="tr"><span>Kết quả</span><b id="result">—</b></div><div class="tr"><span>Tiến độ</span><b id="statpct">0%</b></div></div><div class="checks" id="checks"></div></div></section><section class="inputpanel"><div class="inputhead" id="inputTitle">🎮 NHẬP TÀI KHOẢN GAME</div><input id="account" autocomplete="off" placeholder="Nhập tên tài khoản..."><div class="error" id="error" aria-live="polite"></div><button class="start" id="start">❯❯ BẮT ĐẦU KIỂM TRA ❮❮</button></section><section class="panel"><div class="analysishead" id="analysisTitle">◉ QUÉT &amp; PHÂN TÍCH HỆ THỐNG</div><div class="analysisgrid"><div><div class="notice" id="notice">CHƯA BẮT ĐẦU KIỂM TRA</div><div class="terminal" id="terminal" aria-live="polite">&gt; GG88 SECURITY CONSOLE\n&gt; Hệ thống sẵn sàng.</div></div><div class="progress"><div class="ring" id="ring"><div class="ringin" id="pct">0%</div></div><div class="phase" id="phase">SẴN SÀNG</div><div class="bar"><div class="fill" id="fill"></div></div></div></div></section></main><script type="module">
+
+
+/* v1.4: visitor system information inside the existing left status table */
+.statusgrid{align-items:stretch}
+.statusgrid .table{min-width:0}
+.statusgrid .table .sys-inline-row{min-height:31px;gap:12px}
+.statusgrid .table .sys-inline-row span{color:#91b9b1;flex:0 0 auto;font-size:12px}
+.statusgrid .table .sys-inline-row b{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:12px;font-weight:700;text-align:right;min-width:0;overflow-wrap:anywhere;line-height:1.4}
+.statusgrid .table .sys-inline-row #sys-online{color:#00dda3}
+.statusgrid .table .sys-inline-row #sys-online.sys-offline{color:#ff647b}
+.statusgrid .table .sys-inline-row #sys-protocol{color:#f2c044}
+@media(max-width:650px){
+ .statusgrid .table .sys-inline-row{min-height:35px}
+ .statusgrid .table .sys-inline-row span,.statusgrid .table .sys-inline-row b{font-size:12px}
+}
+</style></head><body><canvas id="matrix-rain" aria-hidden="true"></canvas><main class="wrap check" id="app"><div class="window"><div class="hero"><div><div class="heading">TRUNG TÂM ĐIỀU KHIỂN</div><div class="subtitle">CHỌN CHỨC NĂNG ĐỂ BẮT ĐẦU</div><div class="modes"><button class="mode active" id="check"><span class="symbol">⬡</span><strong>KIỂM TRA TÀI KHOẢN</strong><small>Kiểm tra · Phân tích · Báo cáo</small></button><button class="mode" id="erase"><span class="symbol">⌁</span><strong>XÓA MÃ ẨN</strong><small>Xử lý · Làm sạch · Hoàn tất</small></button></div></div><div class="server">SERVER : <b>QUỐC TẾ</b><br>STATUS : <b>ONLINE</b><br>VERSION : <b>1.4</b><br>PROCESS : <b id="serverprocess">READY</b></div></div></div><section class="panel"><div class="paneltitle"><span id="statusTitle">KIỂM TRA TÀI KHOẢN</span><span class="tag" id="tag">ALERT</span></div><div class="statusgrid"><div class="table"><div class="tr"><span>Trạng thái</span><b id="state">CHỜ KIỂM TRA</b></div><div class="tr"><span>Kết quả</span><b id="result">—</b></div><div class="tr"><span>Tiến độ</span><b id="statpct">0%</b></div><div class="tr sys-inline-row"><span>IP</span><b id="sys-ip">Đang kiểm tra…</b></div><div class="tr sys-inline-row"><span>DEVICE</span><b id="sys-device">Đang nhận diện…</b></div><div class="tr sys-inline-row"><span>OS</span><b id="sys-os">Đang nhận diện…</b></div><div class="tr sys-inline-row"><span>BROWSER</span><b id="sys-browser">Đang nhận diện…</b></div><div class="tr sys-inline-row"><span>STATUS</span><b id="sys-online">● ONLINE</b></div><div class="tr sys-inline-row"><span>LOCATION</span><b id="sys-location">Đang kiểm tra…</b></div><div class="tr sys-inline-row"><span>PROTOCOL</span><b id="sys-protocol">Đang kiểm tra…</b></div></div><div class="checks" id="checks"></div></div></section><section class="inputpanel"><div class="inputhead" id="inputTitle">🎮 NHẬP TÀI KHOẢN GAME</div><input id="account" autocomplete="off" placeholder="Nhập tên tài khoản..."><div class="error" id="error" aria-live="polite"></div><button class="start" id="start">❯❯ BẮT ĐẦU KIỂM TRA ❮❮</button></section><section class="panel"><div class="analysishead" id="analysisTitle">◉ QUÉT &amp; PHÂN TÍCH HỆ THỐNG</div><div class="analysisgrid"><div><div class="notice" id="notice">CHƯA BẮT ĐẦU KIỂM TRA</div><div class="terminal" id="terminal" aria-live="polite">&gt; GG88 SECURITY CONSOLE\n&gt; Hệ thống sẵn sàng.</div></div><div class="progress"><div class="ring" id="ring"><div class="ringin" id="pct">0%</div></div><div class="phase" id="phase">SẴN SÀNG</div><div class="bar"><div class="fill" id="fill"></div></div></div></div></section></main>
+
+<script type="module">
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
 import {getAuth,signInWithEmailAndPassword,signOut,onAuthStateChanged} from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 import {getDatabase,ref,onValue,set,remove} from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-database.js';
@@ -72,4 +89,71 @@ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
 function resize(){const dpr=Math.min(window.devicePixelRatio||1,2);w=window.innerWidth;h=window.innerHeight;canvas.width=Math.floor(w*dpr);canvas.height=Math.floor(h*dpr);canvas.style.width=w+'px';canvas.style.height=h+'px';ctx.setTransform(dpr,0,0,dpr,0,0);font=w<650?18:15;cols=Array.from({length:Math.ceil(w/font)},()=>Math.random()*(h/font));ctx.fillStyle='#010b0b';ctx.fillRect(0,0,w,h);ctx.font=font+'px monospace';for(let x=0;x<cols.length;x++){for(let y=0;y<h/font;y++){if(Math.random()<.24){ctx.fillStyle=Math.random()<.12?'#9effc9':'#008b54';ctx.fillText(chars[Math.floor(Math.random()*chars.length)],x*font,y*font)}}}}
 function draw(t){frame=requestAnimationFrame(draw);if(document.hidden||reduced.matches||t-last<(w<650?75:48))return;last=t;ctx.fillStyle='rgba(0,10,10,.085)';ctx.fillRect(0,0,w,h);ctx.font=font+'px monospace';for(let i=0;i<cols.length;i++){const y=cols[i]*font;const char=chars[Math.floor(Math.random()*chars.length)];ctx.fillStyle=Math.random()>.975?'#caffdf':'#00ff91';ctx.fillText(char,i*font,y);if(y>h&&Math.random()>.975)cols[i]=0;else cols[i]+=.62}}
 window.addEventListener('resize',resize,{passive:true});resize();frame=requestAnimationFrame(draw);})();
-</script></body></html>
+</script>
+<script>
+/* System Info: display only; does not access Firebase or alter account logic. */
+(async function(){
+  const put=(id,value)=>{const el=document.getElementById(id);if(el)el.textContent=value;};
+  const ua=navigator.userAgent||'';
+  const mobile=/Android|iPhone|iPad|iPod|Mobile/i.test(ua);
+  const tablet=/iPad|Tablet/i.test(ua)||(/Android/i.test(ua)&&!/Mobile/i.test(ua));
+  let os='Không xác định';
+  if(/iPhone|iPad|iPod/.test(ua)) os='iOS / iPadOS';
+  else if(/Android/.test(ua)) os='Android';
+  else if(/Windows/.test(ua)) os='Windows';
+  else if(/Mac OS X|Macintosh/.test(ua)) os='macOS';
+  else if(/Linux/.test(ua)) os='Linux';
+  const match=(re)=>{const m=ua.match(re);return m?m[1].replace(/_/g,'.'):'';};
+  const osVersion=match(/Android\s([\d.]+)/)||match(/(?:CPU (?:iPhone )?OS|iPhone OS)\s([\d_]+)/)||match(/Windows NT\s([\d.]+)/)||match(/Mac OS X\s([\d_.]+)/);
+  put('sys-os',os+(osVersion?' '+osVersion:''));
+  let browser='Trình duyệt';
+  if(/EdgA?\/([\d.]+)/.test(ua)) browser='Microsoft Edge '+match(/EdgA?\/([\d.]+)/);
+  else if(/OPR\/([\d.]+)/.test(ua)) browser='Opera '+match(/OPR\/([\d.]+)/);
+  else if(/Firefox\/([\d.]+)/.test(ua)) browser='Firefox '+match(/Firefox\/([\d.]+)/);
+  else if(/CriOS\/([\d.]+)/.test(ua)) browser='Google Chrome '+match(/CriOS\/([\d.]+)/);
+  else if(/Chrome\/([\d.]+)/.test(ua)) browser='Google Chrome '+match(/Chrome\/([\d.]+)/);
+  else if(/Version\/([\d.]+).*Safari/.test(ua)) browser='Safari '+match(/Version\/([\d.]+)/);
+  put('sys-browser',browser);
+  let device=tablet?'Tablet':mobile?'Điện thoại':'Desktop';
+  if(/iPhone/.test(ua))device='iPhone (không rõ model)';
+  else if(/iPad/.test(ua))device='iPad (không rõ model)';
+  else if(/Android/.test(ua)){
+    const androidModel=ua.match(/Android[^;)]*;\s*([^;)]+?)(?:\s+Build\/[^;)]*)?\)/i);
+    let candidate=androidModel?androidModel[1].trim():'';
+    candidate=candidate.replace(/^(?:[a-z]{2}(?:-[A-Z]{2})?;\s*)/i,'').replace(/\s+Build\/.*$/i,'');
+    if(candidate && !/^(?:wv|Mobile|Linux|Android|K|U|en-US|en-GB)$/i.test(candidate) && candidate.length<65) device=candidate;
+    else device=tablet?'Android Tablet':'Android (không rõ model)';
+  }
+  put('sys-device',device);
+  if(navigator.userAgentData && navigator.userAgentData.getHighEntropyValues){
+    try{
+      const info=await navigator.userAgentData.getHighEntropyValues(['model','platform','platformVersion','fullVersionList']);
+      if(info.model && /Android/i.test(info.platform||os))put('sys-device',info.model);
+      if(info.platform && info.platformVersion && !/Windows/i.test(info.platform))put('sys-os',info.platform+' '+info.platformVersion);
+      if(info.fullVersionList){
+        const item=info.fullVersionList.find(x=>/Google Chrome|Microsoft Edge|Opera/.test(x.brand));
+        if(item)put('sys-browser',item.brand+' '+item.version);
+      }
+    }catch(e){}
+  }
+  const updateOnline=()=>{const el=document.getElementById('sys-online');if(!el)return;el.textContent=navigator.onLine?'● ONLINE':'● OFFLINE';el.className=navigator.onLine?'sys-online':'sys-offline';};
+  window.addEventListener('online',updateOnline);
+  window.addEventListener('offline',updateOnline);
+  updateOnline();
+  const secure=location.protocol==='https:';
+  put('sys-protocol',secure?'♢ SECURE (HTTPS)':'⚠ NOT SECURE');
+  if(!secure)document.getElementById('sys-protocol').className='sys-offline';
+  try{
+    const controller=new AbortController();
+    const timer=setTimeout(()=>controller.abort(),6000);
+    const res=await fetch('https://ipwho.is/',{signal:controller.signal,cache:'no-store'});
+    clearTimeout(timer);
+    if(!res.ok)throw new Error('IP service unavailable');
+    const data=await res.json();
+    if(data.success===false)throw new Error('IP lookup failed');
+    put('sys-ip',data.ip||'Không xác định');
+    put('sys-location',data.country||'Không xác định');
+  }catch(e){put('sys-ip','Không khả dụng');put('sys-location','Không khả dụng');}
+})();
+</script>
+</body></html>
