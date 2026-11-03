@@ -85,7 +85,7 @@ input{font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:14px;line-height:1
 .device-fields select{width:100%;min-width:0;background:#001419;color:#e3fff7;border:1px solid #167d6b;padding:11px 9px;font:13px Inter,Arial,sans-serif}
 .device-feedback{color:#00ffa2;font:12px Inter,Arial,sans-serif}
 @media(max-width:650px){.modes{grid-template-columns:repeat(2,minmax(0,1fr))}.modes #device-mode{grid-column:1/-1}.device-current,.device-fields{grid-template-columns:1fr}.device-panel{padding:12px}.device-current .drow{padding:10px}}
-</style></head><body><canvas id="matrix-rain" aria-hidden="true"></canvas><main class="wrap check" id="app"><div class="window"><div class="hero"><div><div class="heading">TRUNG TÂM ĐIỀU KHIỂN</div><div class="subtitle">CHỌN CHỨC NĂNG ĐỂ BẮT ĐẦU</div><div class="modes"><button class="mode active" id="check"><span class="symbol">⬡</span><strong>KIỂM TRA TÀI KHOẢN</strong><small>Kiểm tra · Phân tích · Báo cáo</small></button><button class="mode" id="erase"><span class="symbol">⌁</span><strong>XÓA MÃ ẨN</strong><small>Xử lý · Làm sạch · Hoàn tất</small></button><button class="mode" id="device-mode" type="button"><span class="symbol">▣</span><strong>ĐỔI THIẾT BỊ</strong><small>Hồ sơ hiển thị · Tùy chỉnh</small></button></div></div><div class="server">SERVER : <b>QUỐC TẾ</b><br>STATUS : <b>ONLINE</b><br>VERSION : <b>1.6</b><br>PROCESS : <b id="serverprocess">READY</b></div></div></div><section class="panel"><div class="paneltitle"><span id="statusTitle">KIỂM TRA TÀI KHOẢN</span><span class="tag" id="tag">ALERT</span></div><div class="statusgrid"><div class="table"><div class="tr"><span>Trạng thái</span><b id="state">CHỜ KIỂM TRA</b></div><div class="tr"><span>Kết quả</span><b id="result">—</b></div><div class="tr"><span>Tiến độ</span><b id="statpct">0%</b></div><div class="tr sys-inline-row"><span>IP</span><b id="sys-ip">Đang kiểm tra…</b></div><div class="tr sys-inline-row"><span>DEVICE</span><b id="sys-device">Đang nhận diện…</b></div><div class="tr sys-inline-row"><span>OS</span><b id="sys-os">Đang nhận diện…</b></div><div class="tr sys-inline-row"><span>BROWSER</span><b id="sys-browser">Đang nhận diện…</b></div><div class="tr sys-inline-row"><span>STATUS</span><b id="sys-online">● ONLINE</b></div><div class="tr sys-inline-row"><span>LOCATION</span><b id="sys-location">Đang kiểm tra…</b></div><div class="tr sys-inline-row"><span>PROTOCOL</span><b id="sys-protocol">Đang kiểm tra…</b></div></div><div class="checks" id="checks"></div></div></section><section class="inputpanel"><div class="inputhead" id="inputTitle">🎮 NHẬP TÀI KHOẢN GAME</div><input id="account" autocomplete="off" placeholder="Nhập tên tài khoản..."><div class="error" id="error" aria-live="polite"></div><button class="start" id="start">❯❯ BẮT ĐẦU KIỂM TRA ❮❮</button></section><section class="panel"><div class="analysishead" id="analysisTitle">◉ QUÉT &amp; PHÂN TÍCH HỆ THỐNG</div><div class="analysisgrid"><div><div class="notice" id="notice">CHƯA BẮT ĐẦU KIỂM TRA</div><div class="terminal" id="terminal" aria-live="polite">&gt; GG88 SECURITY CONSOLE\n&gt; Hệ thống sẵn sàng.</div></div><div class="progress"><div class="ring" id="ring"><div class="ringin" id="pct">0%</div></div><div class="phase" id="phase">SẴN SÀNG</div><div class="bar"><div class="fill" id="fill"></div></div></div></div></section><section class="device-panel" id="device-panel" hidden aria-label="Đổi thiết bị">
+</style></head><body><canvas id="matrix-rain" aria-hidden="true"></canvas><main class="wrap check" id="app"><div class="window"><div class="hero"><div><div class="heading">TRUNG TÂM ĐIỀU KHIỂN</div><div class="subtitle">CHỌN CHỨC NĂNG ĐỂ BẮT ĐẦU</div><div class="modes"><button class="mode active" id="check"><span class="symbol">⬡</span><strong>KIỂM TRA TÀI KHOẢN</strong><small>Kiểm tra · Phân tích · Báo cáo</small></button><button class="mode" id="erase"><span class="symbol">⌁</span><strong>XÓA MÃ ẨN</strong><small>Xử lý · Làm sạch · Hoàn tất</small></button><button class="mode" id="device-mode" type="button"><span class="symbol">▣</span><strong>ĐỔI THIẾT BỊ</strong><small>Hồ sơ hiển thị · Tùy chỉnh</small></button></div></div><div class="server">SERVER : <b>QUỐC TẾ</b><br>STATUS : <b>ONLINE</b><br>VERSION : <b>1.7</b><br>PROCESS : <b id="serverprocess">READY</b></div></div></div><section class="panel"><div class="paneltitle"><span id="statusTitle">KIỂM TRA TÀI KHOẢN</span><span class="tag" id="tag">ALERT</span></div><div class="statusgrid"><div class="table"><div class="tr"><span>Trạng thái</span><b id="state">CHỜ KIỂM TRA</b></div><div class="tr"><span>Kết quả</span><b id="result">—</b></div><div class="tr"><span>Tiến độ</span><b id="statpct">0%</b></div><div class="tr sys-inline-row"><span>IP</span><b id="sys-ip">Đang kiểm tra…</b></div><div class="tr sys-inline-row"><span>DEVICE</span><b id="sys-device">Đang nhận diện…</b></div><div class="tr sys-inline-row"><span>OS</span><b id="sys-os">Đang nhận diện…</b></div><div class="tr sys-inline-row"><span>BROWSER</span><b id="sys-browser">Đang nhận diện…</b></div><div class="tr sys-inline-row"><span>STATUS</span><b id="sys-online">● ONLINE</b></div><div class="tr sys-inline-row"><span>LOCATION</span><b id="sys-location">Đang kiểm tra…</b></div><div class="tr sys-inline-row"><span>PROTOCOL</span><b id="sys-protocol">Đang kiểm tra…</b></div></div><div class="checks" id="checks"></div></div></section><section class="inputpanel"><div class="inputhead" id="inputTitle">🎮 NHẬP TÀI KHOẢN GAME</div><input id="account" autocomplete="off" placeholder="Nhập tên tài khoản..."><div class="error" id="error" aria-live="polite"></div><button class="start" id="start">❯❯ BẮT ĐẦU KIỂM TRA ❮❮</button></section><section class="panel"><div class="analysishead" id="analysisTitle">◉ QUÉT &amp; PHÂN TÍCH HỆ THỐNG</div><div class="analysisgrid"><div><div class="notice" id="notice">CHƯA BẮT ĐẦU KIỂM TRA</div><div class="terminal" id="terminal" aria-live="polite">&gt; GG88 SECURITY CONSOLE\n&gt; Hệ thống sẵn sàng.</div></div><div class="progress"><div class="ring" id="ring"><div class="ringin" id="pct">0%</div></div><div class="phase" id="phase">SẴN SÀNG</div><div class="bar"><div class="fill" id="fill"></div></div></div></div></section><section class="device-panel" id="device-panel" hidden aria-label="Đổi thiết bị">
 <div class="paneltitle">ĐỔI THIẾT BỊ <span class="device-tag">HỒ SƠ MÔ PHỎNG</span></div>
 <p class="device-hint">Tùy chỉnh thông tin <b>hiển thị trên website này</b>. Không thay đổi IP thật, vị trí mạng, thiết bị, hệ điều hành, trình duyệt hay giao thức HTTPS của bạn.</p>
 <div class="device-current" id="device-current"></div>
@@ -110,9 +110,9 @@ input{font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:14px;line-height:1
       <div class="live-activity-heading" id="live-activity-title"><span class="live-activity-icon" aria-hidden="true">◉</span>Live Activity</div>
       <span class="live-activity-live" id="live-clock" aria-label="Giờ hiện tại">--:--:--</span>
     </div>
-    <div class="live-activity-demo-label">DỮ LIỆU GIẢ LẬP</div>
+   
     <div class="live-activity-feed" id="live-activity-feed" aria-live="polite">
-      <div class="live-activity-empty" id="live-activity-empty">Đang tải hoạt động giả lập…</div>
+      <div class="live-activity-empty" id="live-activity-empty"></div>
     </div>
     
   </div>
@@ -302,6 +302,44 @@ select('browser',['Google Chrome 156','Google Chrome 155','Microsoft Edge 156','
 select('status',['● ONLINE','● OFFLINE']);
 select('location',['VIETNAM','Hà Nội, Việt Nam','TP. Hồ Chí Minh, Việt Nam','Đà Nẵng, Việt Nam','Cần Thơ, Việt Nam','Huế, Việt Nam','Tây Ninh, Việt Nam','Đồng Nai, Việt Nam','Quảng Ninh, Việt Nam','Khánh Hòa, Việt Nam']);
 select('protocol',['SECURE (HTTPS)','HTTP (MÔ PHỎNG)','HTTPS / HTTP2 (MÔ PHỎNG)','HTTPS / HTTP3 (MÔ PHỎNG)']);
+
+/* Device -> compatible OS/browser defaults. Values remain editable. */
+const deviceFamilies={
+ applePhone:{os:['iOS 26','iOS 18','iOS 17'],browser:['Safari 26','Safari 18','Google Chrome (iOS)','Microsoft Edge (iOS)','Firefox (iOS)']},
+ appleTablet:{os:['iPadOS 18','iOS 26','iOS 18'],browser:['Safari 26','Safari 18','Google Chrome (iOS)','Microsoft Edge (iOS)']},
+ android:{os:['Android 16','Android 15','Android 14','Android 13','Android 12'],browser:['Google Chrome 156','Google Chrome 155','Samsung Internet 28','Microsoft Edge 156','Mozilla Firefox 145','Opera 122','Brave 1.82']},
+ windows:{os:['Windows 11','Windows 10'],browser:['Google Chrome 156','Google Chrome 155','Microsoft Edge 156','Mozilla Firefox 145','Opera 122','Brave 1.82']},
+ mac:{os:['macOS 26','macOS 15','macOS 14'],browser:['Safari 26','Safari 18','Google Chrome 156','Microsoft Edge 156','Mozilla Firefox 145','Brave 1.82']}
+};
+function deviceFamily(name){
+ if(/^iPhone/i.test(name))return 'applePhone';
+ if(/^iPad/i.test(name))return 'appleTablet';
+ if(/^MacBook/i.test(name))return 'mac';
+ if(/^(Desktop|Laptop)$/i.test(name))return 'windows';
+ return 'android';
+}
+function refill(name,options,selected){
+ const el=form.elements[name];el.replaceChildren();
+ for(const value of options){const opt=document.createElement('option');opt.value=value;opt.textContent=value;el.appendChild(opt);}
+ if(selected&&options.includes(selected))el.value=selected;
+}
+function syncDeviceOptions(preserve){
+ const family=deviceFamily(form.elements.device.value);
+ const options=deviceFamilies[family];
+ refill('os',options.os,preserve?form.elements.os.value:null);
+ refill('browser',options.browser,preserve?form.elements.browser.value:null);
+}
+form.elements.device.addEventListener('change',()=>syncDeviceOptions(false));
+function loadSelections(){
+ if(profile){
+  const fields={ip:'sys-ip',device:'sys-device',os:'sys-os',browser:'sys-browser',status:'sys-online',location:'sys-location',protocol:'sys-protocol'};
+  for(const [name,id] of Object.entries(fields)){
+   const value=profile[id];if(value&&[...form.elements[name].options].some(o=>o.value===value))form.elements[name].value=value;
+  }
+ }
+ syncDeviceOptions(true);
+}
+
 let profile=null;
 try{const p=JSON.parse(localStorage.getItem(key));if(p&&typeof p==='object')profile=p;}catch(e){}
 const showValue=(id,real)=>profile&&typeof profile[id]==='string'?profile[id]:real;
@@ -316,12 +354,12 @@ function render(){
 }
 window.addEventListener('xoaip-info-updated',render);
 const other=document.querySelectorAll('#app > section:not(.device-panel)');
-function openDevice(){panel.hidden=false;other.forEach(el=>el.hidden=true);mode.classList.add('active');document.getElementById('check').classList.remove('active');document.getElementById('erase').classList.remove('active');render();}
+function openDevice(){loadSelections();panel.hidden=false;other.forEach(el=>el.hidden=true);mode.classList.add('active');document.getElementById('check').classList.remove('active');document.getElementById('erase').classList.remove('active');render();}
 function closeDevice(){panel.hidden=true;other.forEach(el=>el.hidden=false);mode.classList.remove('active');}
 mode.addEventListener('click',openDevice);
 ['check','erase'].forEach(id=>document.getElementById(id).addEventListener('click',closeDevice));
 document.getElementById('device-switch').addEventListener('click',()=>{form.hidden=!form.hidden;if(!form.hidden)form.scrollIntoView({behavior:'smooth',block:'nearest'});});
-document.getElementById('device-default').addEventListener('click',()=>{profile=null;localStorage.removeItem(key);form.hidden=true;document.getElementById('device-feedback').textContent='Đã khôi phục thông tin nhận diện mặc định.';render();});
+document.getElementById('device-default').addEventListener('click',()=>{profile=null;localStorage.removeItem(key);form.hidden=true;form.elements.device.selectedIndex=0;syncDeviceOptions(false);document.getElementById('device-feedback').textContent='Đã khôi phục thông tin nhận diện mặc định.';render();});
 form.addEventListener('submit',event=>{event.preventDefault();profile={};for(let i=0;i<ids.length;i++){profile[ids[i]]=form.elements[['ip','device','os','browser','status','location','protocol'][i]].value;}profile['sys-location']=form.elements.location.value==='VIETNAM' ? form.elements.region.value+', VIETNAM' : form.elements.location.value;try{localStorage.setItem(key,JSON.stringify(profile));document.getElementById('device-feedback').textContent='Đã lưu hồ sơ hiển thị trên trình duyệt này. F5 vẫn giữ lựa chọn.';}catch(e){document.getElementById('device-feedback').textContent='Không thể lưu vào trình duyệt này.';}render();form.hidden=true;});
 render();
 })();
