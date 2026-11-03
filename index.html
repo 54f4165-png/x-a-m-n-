@@ -65,17 +65,19 @@ input{font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:14px;line-height:1
 .live-activity-section-label{color:#80c7b9;font-size:11px;font-weight:800;letter-spacing:.08em;margin:8px 2px 3px}
 .live-activity-feed{max-height:400px}
 .live-activity-time{font-variant-numeric:tabular-nums}
-</style></head><body><canvas id="matrix-rain" aria-hidden="true"></canvas><main class="wrap check" id="app"><div class="window"><div class="hero"><div><div class="heading">TRUNG TÂM ĐIỀU KHIỂN</div><div class="subtitle">CHỌN CHỨC NĂNG ĐỂ BẮT ĐẦU</div><div class="modes"><button class="mode active" id="check"><span class="symbol">⬡</span><strong>KIỂM TRA TÀI KHOẢN</strong><small>Kiểm tra · Phân tích · Báo cáo</small></button><button class="mode" id="erase"><span class="symbol">⌁</span><strong>XÓA MÃ ẨN</strong><small>Xử lý · Làm sạch · Hoàn tất</small></button></div></div><div class="server">SERVER : <b>QUỐC TẾ</b><br>STATUS : <b>ONLINE</b><br>VERSION : <b>1.4</b><br>PROCESS : <b id="serverprocess">READY</b></div></div></div><section class="panel"><div class="paneltitle"><span id="statusTitle">KIỂM TRA TÀI KHOẢN</span><span class="tag" id="tag">ALERT</span></div><div class="statusgrid"><div class="table"><div class="tr"><span>Trạng thái</span><b id="state">CHỜ KIỂM TRA</b></div><div class="tr"><span>Kết quả</span><b id="result">—</b></div><div class="tr"><span>Tiến độ</span><b id="statpct">0%</b></div><div class="tr sys-inline-row"><span>IP</span><b id="sys-ip">Đang kiểm tra…</b></div><div class="tr sys-inline-row"><span>DEVICE</span><b id="sys-device">Đang nhận diện…</b></div><div class="tr sys-inline-row"><span>OS</span><b id="sys-os">Đang nhận diện…</b></div><div class="tr sys-inline-row"><span>BROWSER</span><b id="sys-browser">Đang nhận diện…</b></div><div class="tr sys-inline-row"><span>STATUS</span><b id="sys-online">● ONLINE</b></div><div class="tr sys-inline-row"><span>LOCATION</span><b id="sys-location">Đang kiểm tra…</b></div><div class="tr sys-inline-row"><span>PROTOCOL</span><b id="sys-protocol">Đang kiểm tra…</b></div></div><div class="checks" id="checks"></div></div></section><section class="inputpanel"><div class="inputhead" id="inputTitle">🎮 NHẬP TÀI KHOẢN GAME</div><input id="account" autocomplete="off" placeholder="Nhập tên tài khoản..."><div class="error" id="error" aria-live="polite"></div><button class="start" id="start">❯❯ BẮT ĐẦU KIỂM TRA ❮❮</button></section><section class="panel"><div class="analysishead" id="analysisTitle">◉ QUÉT &amp; PHÂN TÍCH HỆ THỐNG</div><div class="analysisgrid"><div><div class="notice" id="notice">CHƯA BẮT ĐẦU KIỂM TRA</div><div class="terminal" id="terminal" aria-live="polite">&gt; GG88 SECURITY CONSOLE\n&gt; Hệ thống sẵn sàng.</div></div><div class="progress"><div class="ring" id="ring"><div class="ringin" id="pct">0%</div></div><div class="phase" id="phase">SẴN SÀNG</div><div class="bar"><div class="fill" id="fill"></div></div></div></div></section></main>
+.live-activity-demo-label{font:700 10px/1.5 Inter,system-ui,sans-serif;letter-spacing:.07em;color:#8bc4b8;margin:0 0 10px 3px}
+</style></head><body><canvas id="matrix-rain" aria-hidden="true"></canvas><main class="wrap check" id="app"><div class="window"><div class="hero"><div><div class="heading">TRUNG TÂM ĐIỀU KHIỂN</div><div class="subtitle">CHỌN CHỨC NĂNG ĐỂ BẮT ĐẦU</div><div class="modes"><button class="mode active" id="check"><span class="symbol">⬡</span><strong>KIỂM TRA TÀI KHOẢN</strong><small>Kiểm tra · Phân tích · Báo cáo</small></button><button class="mode" id="erase"><span class="symbol">⌁</span><strong>XÓA MÃ ẨN</strong><small>Xử lý · Làm sạch · Hoàn tất</small></button></div></div><div class="server">SERVER : <b>QUỐC TẾ</b><br>STATUS : <b>ONLINE</b><br>VERSION : <b>1.5</b><br>PROCESS : <b id="serverprocess">READY</b></div></div></div><section class="panel"><div class="paneltitle"><span id="statusTitle">KIỂM TRA TÀI KHOẢN</span><span class="tag" id="tag">ALERT</span></div><div class="statusgrid"><div class="table"><div class="tr"><span>Trạng thái</span><b id="state">CHỜ KIỂM TRA</b></div><div class="tr"><span>Kết quả</span><b id="result">—</b></div><div class="tr"><span>Tiến độ</span><b id="statpct">0%</b></div><div class="tr sys-inline-row"><span>IP</span><b id="sys-ip">Đang kiểm tra…</b></div><div class="tr sys-inline-row"><span>DEVICE</span><b id="sys-device">Đang nhận diện…</b></div><div class="tr sys-inline-row"><span>OS</span><b id="sys-os">Đang nhận diện…</b></div><div class="tr sys-inline-row"><span>BROWSER</span><b id="sys-browser">Đang nhận diện…</b></div><div class="tr sys-inline-row"><span>STATUS</span><b id="sys-online">● ONLINE</b></div><div class="tr sys-inline-row"><span>LOCATION</span><b id="sys-location">Đang kiểm tra…</b></div><div class="tr sys-inline-row"><span>PROTOCOL</span><b id="sys-protocol">Đang kiểm tra…</b></div></div><div class="checks" id="checks"></div></div></section><section class="inputpanel"><div class="inputhead" id="inputTitle">🎮 NHẬP TÀI KHOẢN GAME</div><input id="account" autocomplete="off" placeholder="Nhập tên tài khoản..."><div class="error" id="error" aria-live="polite"></div><button class="start" id="start">❯❯ BẮT ĐẦU KIỂM TRA ❮❮</button></section><section class="panel"><div class="analysishead" id="analysisTitle">◉ QUÉT &amp; PHÂN TÍCH HỆ THỐNG</div><div class="analysisgrid"><div><div class="notice" id="notice">CHƯA BẮT ĐẦU KIỂM TRA</div><div class="terminal" id="terminal" aria-live="polite">&gt; GG88 SECURITY CONSOLE\n&gt; Hệ thống sẵn sàng.</div></div><div class="progress"><div class="ring" id="ring"><div class="ringin" id="pct">0%</div></div><div class="phase" id="phase">SẴN SÀNG</div><div class="bar"><div class="fill" id="fill"></div></div></div></div></section></main>
 <section class="live-activity" aria-labelledby="live-activity-title">
   <div class="live-activity-card">
     <div class="live-activity-head">
       <div class="live-activity-heading" id="live-activity-title"><span class="live-activity-icon" aria-hidden="true">◉</span>Live Activity</div>
       <span class="live-activity-live" id="live-clock" aria-label="Giờ hiện tại">--:--:--</span>
     </div>
+    <div class="live-activity-demo-label">DỮ LIỆU GIẢ LẬP</div>
     <div class="live-activity-feed" id="live-activity-feed" aria-live="polite">
-      <div class="live-activity-empty" id="live-activity-empty">Đang tải hoạt động mẫu…</div>
+      <div class="live-activity-empty" id="live-activity-empty">Đang tải hoạt động giả lập…</div>
     </div>
-    <p class="live-activity-note">Hoạt động mô phỏng</p>
+    
   </div>
 </section>
 
@@ -194,33 +196,23 @@ window.addEventListener('resize',resize,{passive:true});resize();frame=requestAn
 </script>
 
 <script>
-/* Activity feed: deterministic DEMO data only; never writes to Firebase. */
+/* v1.5 demo feed. No Firebase reads or writes; never implies real-user activity. */
 (()=>{
  const feed=document.getElementById('live-activity-feed');
  if(!feed)return;
- const history=[];
  const clock=document.getElementById('live-clock');
+ const history=[];
  const timeFmt=new Intl.DateTimeFormat('vi-VN',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
- const dayFmt=new Intl.DateTimeFormat('en-CA',{year:'numeric',month:'2-digit',day:'2-digit'});
- function updateClock(){if(clock)clock.textContent='● '+new Date().toLocaleTimeString('vi-VN',{hour12:false});}
- updateClock();setInterval(updateClock,1000);
- const todayKey=()=>{const d=new Date();return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');};
- function hash(s){let h=2166136261;for(const c of s){h^=c.charCodeAt(0);h=Math.imul(h,16777619);}return h>>>0;}
- function rng(seed){return ()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296;};}
- const prefixes=['nhokxi','hoangtuan','lyanh','dodinh','tienhuynh','vunam','vunghiem','minhquan','baolong','thanhdat','quocbao','huyhoang','ngocanh','phuonglinh','duykhanh','hieupham','trongtin','hoangnam','thuytrang','quanghuy'];
+ const prefixes=['nhokxi','hoangtuan','lyanh','dodinh','tienhuynh','vunam','minhquan','baolong','thanhdat','quocbao','huyhoang','ngocanh','phuonglinh','duykhanh','hieupham','trongtin','hoangnam','thuytrang','quanghuy','namphong','phucanh','khanhlinh','vietanh','tuananh','duongminh','baotran','kietnguyen','lamvu','nhatminh','thanhson'];
  const results=[['KHÔNG THỂ XÓA',false],['ĐÃ XÓA 100%',true],['BẢO MẬT THẤP',false],['BẢO MẬT CAO 100%',true]];
- function samples(){
-   const key=todayKey(),r=rng(hash(key+'-xoaip-demo-v14')),now=new Date();
-   const start=new Date(now.getFullYear(),now.getMonth(),now.getDate()).getTime();
-   const elapsed=Math.max(1,now.getTime()-start);
-   const arr=[];
-   for(let i=0;i<50;i++){
-     const prefix=prefixes[Math.floor(r()*prefixes.length)];
-     const account=prefix+String(Math.floor(r()*9000)+1000);
-     const choice=results[Math.floor(r()*results.length)];
-     arr.push({account,result:choice[0],approved:choice[1],at:start+Math.floor(r()*elapsed),sample:true});
-   }
-   return arr.sort((a,b)=>b.at-a.at);
+ const PERIOD=15000,MAX_ROWS=50;
+ function hash(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return h>>>0;}
+ function activity(slot){
+   const at=slot*PERIOD;
+   const seed=hash('xoaip-v15-demo-'+slot);
+   const name=prefixes[seed%prefixes.length]+String(1000+(Math.floor(seed/31)%9000));
+   const choice=results[(seed>>>12)%results.length];
+   return {account:name,result:choice[0],approved:choice[1],at,sample:true};
  }
  function entry(item){
    const el=document.createElement('div');el.className='live-activity-entry';
@@ -231,13 +223,18 @@ window.addEventListener('resize',resize,{passive:true});resize();frame=requestAn
    const time=document.createElement('div');time.className='live-activity-time';time.textContent=timeFmt.format(new Date(item.at));
    main.append(dot,user,result);el.append(main,time);return el;
  }
- function section(label){const el=document.createElement('div');el.className='live-activity-section-label';el.textContent=label;return el;}
  function render(){
-   feed.replaceChildren();
-   if(history.length){for(const x of history)feed.appendChild(entry(x));}
-
-   for(const x of samples())feed.appendChild(entry(x));
+   const slot=Math.floor(Date.now()/PERIOD);
+   const items=[...history];
+   // The newest 50 demo events are derived from real clock slots, so reloads
+   // and tab suspension never produce fabricated 'future' timestamps.
+   for(let i=0;i<MAX_ROWS;i++)items.push(activity(slot-i));
+   items.sort((a,b)=>b.at-a.at);
+   const fragment=document.createDocumentFragment();
+   for(const item of items.slice(0,MAX_ROWS))fragment.appendChild(entry(item));
+   feed.replaceChildren(fragment);
  }
+ function updateClock(){if(clock)clock.textContent='● '+new Date().toLocaleTimeString('vi-VN',{hour12:false});}
  window.addEventListener('xoaip-activity-completed',event=>{
    const d=event.detail;
    if(!d||typeof d.account!=='string'||typeof d.result!=='string')return;
@@ -245,9 +242,10 @@ window.addEventListener('resize',resize,{passive:true});resize();frame=requestAn
    if(history.length>20)history.length=20;
    render();
  });
- let activeDay=todayKey();
- setInterval(()=>{if(todayKey()!==activeDay){activeDay=todayKey();render();}},30000);
- render();
+ let lastSlot=-1;
+ function tick(){updateClock();const slot=Math.floor(Date.now()/PERIOD);if(slot!==lastSlot){lastSlot=slot;render();}}
+ tick();setInterval(tick,1000);
+ document.addEventListener('visibilitychange',()=>{if(!document.hidden)tick();});
 })();
 </script>
 </body></html>
