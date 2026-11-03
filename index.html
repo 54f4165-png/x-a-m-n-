@@ -29,15 +29,16 @@ input{font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:14px;line-height:1
 @media(max-width:380px){.heading{font-size:21px}.mode strong{font-size:11px}.tr,.cr{font-size:11px}.start{font-size:15px}}
 
 
-/* v1.4: visitor system information inside the existing left status table */
+/* v1.4: system information matches the original USER green/cyan palette */
 .statusgrid{align-items:stretch}
 .statusgrid .table{min-width:0}
 .statusgrid .table .sys-inline-row{min-height:31px;gap:12px}
-.statusgrid .table .sys-inline-row span{color:#91b9b1;flex:0 0 auto;font-size:12px}
-.statusgrid .table .sys-inline-row b{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:12px;font-weight:700;text-align:right;min-width:0;overflow-wrap:anywhere;line-height:1.4}
-.statusgrid .table .sys-inline-row #sys-online{color:#00dda3}
+.statusgrid .table .sys-inline-row span{color:#b5dcd5;flex:0 0 auto;font-size:12px}
+.statusgrid .table .sys-inline-row b{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:12px;font-weight:700;text-align:right;min-width:0;overflow-wrap:anywhere;line-height:1.4;color:var(--green)}
+.statusgrid .table .sys-inline-row #sys-online{color:var(--green)}
 .statusgrid .table .sys-inline-row #sys-online.sys-offline{color:#ff647b}
-.statusgrid .table .sys-inline-row #sys-protocol{color:#f2c044}
+.statusgrid .table .sys-inline-row #sys-protocol{color:var(--green)}
+.statusgrid .table .sys-inline-row #sys-protocol.sys-offline{color:var(--red)}
 @media(max-width:650px){
  .statusgrid .table .sys-inline-row{min-height:35px}
  .statusgrid .table .sys-inline-row span,.statusgrid .table .sys-inline-row b{font-size:12px}
