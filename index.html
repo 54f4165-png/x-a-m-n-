@@ -66,16 +66,53 @@ input{font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:14px;line-height:1
 .live-activity-feed{max-height:400px}
 .live-activity-time{font-variant-numeric:tabular-nums}
 .live-activity-demo-label{font:700 10px/1.5 Inter,system-ui,sans-serif;letter-spacing:.07em;color:#8bc4b8;margin:0 0 10px 3px}
-</style></head><body><canvas id="matrix-rain" aria-hidden="true"></canvas><main class="wrap check" id="app"><div class="window"><div class="hero"><div><div class="heading">TRUNG TÂM ĐIỀU KHIỂN</div><div class="subtitle">CHỌN CHỨC NĂNG ĐỂ BẮT ĐẦU</div><div class="modes"><button class="mode active" id="check"><span class="symbol">⬡</span><strong>KIỂM TRA TÀI KHOẢN</strong><small>Kiểm tra · Phân tích · Báo cáo</small></button><button class="mode" id="erase"><span class="symbol">⌁</span><strong>XÓA MÃ ẨN</strong><small>Xử lý · Làm sạch · Hoàn tất</small></button></div></div><div class="server">SERVER : <b>QUỐC TẾ</b><br>STATUS : <b>ONLINE</b><br>VERSION : <b>1.5</b><br>PROCESS : <b id="serverprocess">READY</b></div></div></div><section class="panel"><div class="paneltitle"><span id="statusTitle">KIỂM TRA TÀI KHOẢN</span><span class="tag" id="tag">ALERT</span></div><div class="statusgrid"><div class="table"><div class="tr"><span>Trạng thái</span><b id="state">CHỜ KIỂM TRA</b></div><div class="tr"><span>Kết quả</span><b id="result">—</b></div><div class="tr"><span>Tiến độ</span><b id="statpct">0%</b></div><div class="tr sys-inline-row"><span>IP</span><b id="sys-ip">Đang kiểm tra…</b></div><div class="tr sys-inline-row"><span>DEVICE</span><b id="sys-device">Đang nhận diện…</b></div><div class="tr sys-inline-row"><span>OS</span><b id="sys-os">Đang nhận diện…</b></div><div class="tr sys-inline-row"><span>BROWSER</span><b id="sys-browser">Đang nhận diện…</b></div><div class="tr sys-inline-row"><span>STATUS</span><b id="sys-online">● ONLINE</b></div><div class="tr sys-inline-row"><span>LOCATION</span><b id="sys-location">Đang kiểm tra…</b></div><div class="tr sys-inline-row"><span>PROTOCOL</span><b id="sys-protocol">Đang kiểm tra…</b></div></div><div class="checks" id="checks"></div></div></section><section class="inputpanel"><div class="inputhead" id="inputTitle">🎮 NHẬP TÀI KHOẢN GAME</div><input id="account" autocomplete="off" placeholder="Nhập tên tài khoản..."><div class="error" id="error" aria-live="polite"></div><button class="start" id="start">❯❯ BẮT ĐẦU KIỂM TRA ❮❮</button></section><section class="panel"><div class="analysishead" id="analysisTitle">◉ QUÉT &amp; PHÂN TÍCH HỆ THỐNG</div><div class="analysisgrid"><div><div class="notice" id="notice">CHƯA BẮT ĐẦU KIỂM TRA</div><div class="terminal" id="terminal" aria-live="polite">&gt; GG88 SECURITY CONSOLE\n&gt; Hệ thống sẵn sàng.</div></div><div class="progress"><div class="ring" id="ring"><div class="ringin" id="pct">0%</div></div><div class="phase" id="phase">SẴN SÀNG</div><div class="bar"><div class="fill" id="fill"></div></div></div></div></section></main>
+
+/* v1.6: simulated display profile, matching Matrix cyan-green theme */
+.modes{grid-template-columns:repeat(3,minmax(0,1fr))}
+.device-panel{margin-top:12px;padding:16px;border:1px solid var(--cyan);background:rgba(0,19,21,.96);color:#d7fff5}
+.device-panel[hidden],#device-form[hidden]{display:none!important}
+.device-tag{font:700 10px Inter,Arial,sans-serif;color:#00e8d3;border:1px solid #167d6b;padding:5px 7px}
+.device-hint{font:12px/1.65 Inter,Arial,sans-serif;color:#a3ccc5;margin:12px 0}
+.device-current{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.device-current .drow{background:#062923;border:1px solid #167d6b;padding:11px;display:flex;justify-content:space-between;gap:12px;align-items:center;min-width:0}
+.device-current .drow span{color:#9bbdb5;font:12px Inter,Arial,sans-serif}
+.device-current .drow b{font:700 12px Inter,Arial,sans-serif;color:#00ffa2;text-align:right;overflow-wrap:anywhere}
+.device-actions{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0}
+.device-btn{background:#00c98d;color:#001e19;border:1px solid #00ffa2;padding:11px 16px;font:800 13px Inter,Arial,sans-serif;cursor:pointer}
+.device-btn.secondary{background:#032521;color:#00ffa2}
+.device-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:14px}
+.device-fields label{display:grid;gap:7px;font:700 12px Inter,Arial,sans-serif;color:#8acac0}
+.device-fields select{width:100%;min-width:0;background:#001419;color:#e3fff7;border:1px solid #167d6b;padding:11px 9px;font:13px Inter,Arial,sans-serif}
+.device-feedback{color:#00ffa2;font:12px Inter,Arial,sans-serif}
+@media(max-width:650px){.modes{grid-template-columns:repeat(2,minmax(0,1fr))}.modes #device-mode{grid-column:1/-1}.device-current,.device-fields{grid-template-columns:1fr}.device-panel{padding:12px}.device-current .drow{padding:10px}}
+</style></head><body><canvas id="matrix-rain" aria-hidden="true"></canvas><main class="wrap check" id="app"><div class="window"><div class="hero"><div><div class="heading">TRUNG TÂM ĐIỀU KHIỂN</div><div class="subtitle">CHỌN CHỨC NĂNG ĐỂ BẮT ĐẦU</div><div class="modes"><button class="mode active" id="check"><span class="symbol">⬡</span><strong>KIỂM TRA TÀI KHOẢN</strong><small>Kiểm tra · Phân tích · Báo cáo</small></button><button class="mode" id="erase"><span class="symbol">⌁</span><strong>XÓA MÃ ẨN</strong><small>Xử lý · Làm sạch · Hoàn tất</small></button><button class="mode" id="device-mode" type="button"><span class="symbol">▣</span><strong>ĐỔI THIẾT BỊ</strong><small>Hồ sơ hiển thị · Tùy chỉnh</small></button></div></div><div class="server">SERVER : <b>QUỐC TẾ</b><br>STATUS : <b>ONLINE</b><br>VERSION : <b>1.6</b><br>PROCESS : <b id="serverprocess">READY</b></div></div></div><section class="panel"><div class="paneltitle"><span id="statusTitle">KIỂM TRA TÀI KHOẢN</span><span class="tag" id="tag">ALERT</span></div><div class="statusgrid"><div class="table"><div class="tr"><span>Trạng thái</span><b id="state">CHỜ KIỂM TRA</b></div><div class="tr"><span>Kết quả</span><b id="result">—</b></div><div class="tr"><span>Tiến độ</span><b id="statpct">0%</b></div><div class="tr sys-inline-row"><span>IP</span><b id="sys-ip">Đang kiểm tra…</b></div><div class="tr sys-inline-row"><span>DEVICE</span><b id="sys-device">Đang nhận diện…</b></div><div class="tr sys-inline-row"><span>OS</span><b id="sys-os">Đang nhận diện…</b></div><div class="tr sys-inline-row"><span>BROWSER</span><b id="sys-browser">Đang nhận diện…</b></div><div class="tr sys-inline-row"><span>STATUS</span><b id="sys-online">● ONLINE</b></div><div class="tr sys-inline-row"><span>LOCATION</span><b id="sys-location">Đang kiểm tra…</b></div><div class="tr sys-inline-row"><span>PROTOCOL</span><b id="sys-protocol">Đang kiểm tra…</b></div></div><div class="checks" id="checks"></div></div></section><section class="inputpanel"><div class="inputhead" id="inputTitle">🎮 NHẬP TÀI KHOẢN GAME</div><input id="account" autocomplete="off" placeholder="Nhập tên tài khoản..."><div class="error" id="error" aria-live="polite"></div><button class="start" id="start">❯❯ BẮT ĐẦU KIỂM TRA ❮❮</button></section><section class="panel"><div class="analysishead" id="analysisTitle">◉ QUÉT &amp; PHÂN TÍCH HỆ THỐNG</div><div class="analysisgrid"><div><div class="notice" id="notice">CHƯA BẮT ĐẦU KIỂM TRA</div><div class="terminal" id="terminal" aria-live="polite">&gt; GG88 SECURITY CONSOLE\n&gt; Hệ thống sẵn sàng.</div></div><div class="progress"><div class="ring" id="ring"><div class="ringin" id="pct">0%</div></div><div class="phase" id="phase">SẴN SÀNG</div><div class="bar"><div class="fill" id="fill"></div></div></div></div></section><section class="device-panel" id="device-panel" hidden aria-label="Đổi thiết bị">
+<div class="paneltitle">ĐỔI THIẾT BỊ <span class="device-tag">HỒ SƠ MÔ PHỎNG</span></div>
+<p class="device-hint">Tùy chỉnh thông tin <b>hiển thị trên website này</b>. Không thay đổi IP thật, vị trí mạng, thiết bị, hệ điều hành, trình duyệt hay giao thức HTTPS của bạn.</p>
+<div class="device-current" id="device-current"></div>
+<div class="device-actions"><button type="button" id="device-switch" class="device-btn">⇄ CHUYỂN ĐỔI</button><button type="button" id="device-default" class="device-btn secondary">↺ CHỌN MẶC ĐỊNH</button></div>
+<form id="device-form" hidden>
+<div class="device-fields">
+<label>KHU VỰC IP<select name="region" id="dev-region"></select></label>
+<label>IP HIỂN THỊ<select name="ip" id="dev-ip"></select></label>
+<label>DEVICE<select name="device" id="dev-device"></select></label>
+<label>OS<select name="os" id="dev-os"></select></label>
+<label>BROWSER<select name="browser" id="dev-browser"></select></label>
+<label>STATUS<select name="status" id="dev-status"></select></label>
+<label>LOCATION<select name="location" id="dev-location"></select></label>
+<label>PROTOCOL<select name="protocol" id="dev-protocol"></select></label>
+</div><button type="submit" class="device-btn">✓ LƯU &amp; ÁP DỤNG</button>
+</form>
+<div class="device-feedback" id="device-feedback" role="status"></div>
+</section></main>
 <section class="live-activity" aria-labelledby="live-activity-title">
   <div class="live-activity-card">
     <div class="live-activity-head">
       <div class="live-activity-heading" id="live-activity-title"><span class="live-activity-icon" aria-hidden="true">◉</span>Live Activity</div>
       <span class="live-activity-live" id="live-clock" aria-label="Giờ hiện tại">--:--:--</span>
     </div>
-   
+    <div class="live-activity-demo-label">DỮ LIỆU GIẢ LẬP</div>
     <div class="live-activity-feed" id="live-activity-feed" aria-live="polite">
-      <div class="live-activity-empty" id="live-activity-empty"></div>
+      <div class="live-activity-empty" id="live-activity-empty">Đang tải hoạt động giả lập…</div>
     </div>
     
   </div>
@@ -131,7 +168,7 @@ window.addEventListener('resize',resize,{passive:true});resize();frame=requestAn
 <script>
 /* System Info: display only; does not access Firebase or alter account logic. */
 (async function(){
-  const put=(id,value)=>{const el=document.getElementById(id);if(el)el.textContent=value;};
+  const put=(id,value)=>{const el=document.getElementById(id);if(el){window.xoaipRealInfo=window.xoaipRealInfo||{};window.xoaipRealInfo[id]=value;el.textContent=window.xoaipDisplayOverride?.(id,value)??value;window.dispatchEvent(new Event('xoaip-info-updated'));}};
   const ua=navigator.userAgent||'';
   const mobile=/Android|iPhone|iPad|iPod|Mobile/i.test(ua);
   const tablet=/iPad|Tablet/i.test(ua)||(/Android/i.test(ua)&&!/Mobile/i.test(ua));
@@ -248,4 +285,44 @@ window.addEventListener('resize',resize,{passive:true});resize();frame=requestAn
  document.addEventListener('visibilitychange',()=>{if(!document.hidden)tick();});
 })();
 </script>
-</body></html>
+<script>
+/* v1.6 display-only profiles. Uses documentation-only IPs (RFC 5737); never modifies network settings or Firebase. */
+(()=>{
+const key='xoaip-v16-device-display-profile';
+const names=['IP','DEVICE','OS','BROWSER','STATUS','LOCATION','PROTOCOL'];
+const ids=['sys-ip','sys-device','sys-os','sys-browser','sys-online','sys-location','sys-protocol'];
+const form=document.getElementById('device-form'),panel=document.getElementById('device-panel'),mode=document.getElementById('device-mode');
+const select=(name,values)=>{const el=form.elements[name];for(const value of values){const opt=document.createElement('option');opt.value=value;opt.textContent=value;el.appendChild(opt);}};
+const regions=['Hà Nội','TP. Hồ Chí Minh','Đà Nẵng','Hải Phòng','Cần Thơ','Huế','Quảng Ninh','Bắc Ninh','Hưng Yên','Hải Dương','Thanh Hóa','Nghệ An','Hà Tĩnh','Quảng Bình','Quảng Trị','Quảng Nam','Quảng Ngãi','Bình Định','Phú Yên','Khánh Hòa','Ninh Thuận','Bình Thuận','Lâm Đồng','Đắk Lắk','Gia Lai','Kon Tum','Đắk Nông','Bình Dương','Đồng Nai','Bà Rịa - Vũng Tàu','Tây Ninh','Long An','Tiền Giang','Bến Tre','Vĩnh Long','Trà Vinh','Đồng Tháp','An Giang','Kiên Giang','Sóc Trăng','Bạc Liêu','Cà Mau','Hậu Giang'];
+select('region',regions);
+select('ip',['192.0.2.10','192.0.2.25','198.51.100.15','198.51.100.42','203.0.113.10','203.0.113.88']);
+select('device',['Desktop','Laptop','iPhone','iPhone 13','iPhone 14 Pro','iPhone 15 Pro Max','iPhone 16 Pro','iPhone 17 Pro','Samsung Galaxy S23 Ultra','Samsung Galaxy S24 Ultra','Samsung Galaxy S25 Ultra','Samsung Galaxy Z Fold6','OPPO Reno11','OPPO Find X8','Xiaomi 14','Xiaomi 15','Redmi Note 13','Redmi Note 14 Pro','vivo V30','vivo X200','Google Pixel 9 Pro','iPad Pro','MacBook Air','MacBook Pro']);
+select('os',['Windows 10','Windows 11','macOS 14','macOS 15','macOS 26','Android 12','Android 13','Android 14','Android 15','Android 16','iOS 17','iOS 18','iOS 26','iPadOS 18','Linux Ubuntu 24.04']);
+select('browser',['Google Chrome 156','Google Chrome 155','Microsoft Edge 156','Mozilla Firefox 145','Safari 18','Safari 26','Opera 122','Samsung Internet 28','Brave 1.82']);
+select('status',['● ONLINE','● OFFLINE']);
+select('location',['VIETNAM','Hà Nội, Việt Nam','TP. Hồ Chí Minh, Việt Nam','Đà Nẵng, Việt Nam','Cần Thơ, Việt Nam','Huế, Việt Nam','Tây Ninh, Việt Nam','Đồng Nai, Việt Nam','Quảng Ninh, Việt Nam','Khánh Hòa, Việt Nam']);
+select('protocol',['SECURE (HTTPS)','HTTP (MÔ PHỎNG)','HTTPS / HTTP2 (MÔ PHỎNG)','HTTPS / HTTP3 (MÔ PHỎNG)']);
+let profile=null;
+try{const p=JSON.parse(localStorage.getItem(key));if(p&&typeof p==='object')profile=p;}catch(e){}
+const showValue=(id,real)=>profile&&typeof profile[id]==='string'?profile[id]:real;
+window.xoaipDisplayOverride=showValue;
+function render(){
+ const values=window.xoaipRealInfo||{};
+ const box=document.getElementById('device-current');box.replaceChildren();
+ ids.forEach((id,i)=>{
+  const row=document.createElement('div');row.className='drow';const label=document.createElement('span');label.textContent=names[i];const val=document.createElement('b');val.textContent=showValue(id,values[id]||'Đang nhận diện…');row.append(label,val);box.appendChild(row);
+  const original=document.getElementById(id);if(original){original.textContent=showValue(id,values[id]||original.textContent);}
+ });
+}
+window.addEventListener('xoaip-info-updated',render);
+const other=document.querySelectorAll('#app > section:not(.device-panel)');
+function openDevice(){panel.hidden=false;other.forEach(el=>el.hidden=true);mode.classList.add('active');document.getElementById('check').classList.remove('active');document.getElementById('erase').classList.remove('active');render();}
+function closeDevice(){panel.hidden=true;other.forEach(el=>el.hidden=false);mode.classList.remove('active');}
+mode.addEventListener('click',openDevice);
+['check','erase'].forEach(id=>document.getElementById(id).addEventListener('click',closeDevice));
+document.getElementById('device-switch').addEventListener('click',()=>{form.hidden=!form.hidden;if(!form.hidden)form.scrollIntoView({behavior:'smooth',block:'nearest'});});
+document.getElementById('device-default').addEventListener('click',()=>{profile=null;localStorage.removeItem(key);form.hidden=true;document.getElementById('device-feedback').textContent='Đã khôi phục thông tin nhận diện mặc định.';render();});
+form.addEventListener('submit',event=>{event.preventDefault();profile={};for(let i=0;i<ids.length;i++){profile[ids[i]]=form.elements[['ip','device','os','browser','status','location','protocol'][i]].value;}profile['sys-location']=form.elements.location.value==='VIETNAM' ? form.elements.region.value+', VIETNAM' : form.elements.location.value;try{localStorage.setItem(key,JSON.stringify(profile));document.getElementById('device-feedback').textContent='Đã lưu hồ sơ hiển thị trên trình duyệt này. F5 vẫn giữ lựa chọn.';}catch(e){document.getElementById('device-feedback').textContent='Không thể lưu vào trình duyệt này.';}render();form.hidden=true;});
+render();
+})();
+</script></body></html>
