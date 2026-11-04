@@ -28,6 +28,13 @@
             ".write": "auth != null && !data.exists() && ((auth.uid === $room && newData.child('senderRole').val() === 'user') || (root.child('adminUids').child(auth.uid).val() === true && newData.child('senderRole').val() === 'admin')) && newData.child('senderUid').val() === auth.uid",
             ".validate": "newData.hasChildren(['text','senderUid','senderRole','createdAt']) && newData.child('text').isString() && newData.child('text').val().length <= 2000 && newData.child('createdAt').isNumber()"
           }
+        },
+        "readStates": {
+          "$role": {
+            ".read": "auth != null && (auth.uid === $room || root.child('adminUids').child(auth.uid).val() === true)",
+            ".write": "auth != null && (($role === 'user' && auth.uid === $room) || ($role === 'admin' && root.child('adminUids').child(auth.uid).val() === true))",
+            ".validate": "newData.isNumber() && newData.val() <= now + 60000 && newData.val() >= 0"
+          }
         }
       }
     }
