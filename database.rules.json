@@ -35,6 +35,13 @@
             ".write": "auth != null && (($role === 'user' && auth.uid === $room) || ($role === 'admin' && root.child('adminUids').child(auth.uid).val() === true))",
             ".validate": "newData.isNumber() && newData.val() <= now + 60000 && newData.val() >= 0"
           }
+        },
+        "moderation": {
+          "spam": {
+            ".read": "auth != null && root.child('adminUids').child(auth.uid).val() === true",
+            ".write": "auth != null && root.child('adminUids').child(auth.uid).val() === true",
+            ".validate": "newData.isBoolean()"
+          }
         }
       }
     }
