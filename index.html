@@ -155,8 +155,8 @@ body{-webkit-font-smoothing:antialiased;line-height:1.55;letter-spacing:0}
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
 import {getAuth,signInWithEmailAndPassword,signOut,onAuthStateChanged} from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 import {getDatabase,ref,onValue,set,remove} from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-database.js';
-const config={apiKey:'AIzaSyBf2YZj7eifWZqteunqG5n1w36UWFDeBmc',authDomain:'gg88-web.firebaseapp.com',databaseURL:'https://gg88-web-default-rtdb.asia-southeast1.firebasedatabase.app',projectId:'gg88-web',storageBucket:'gg88-web.firebasestorage.app',messagingSenderId:'375464555072',appId:'1:375464555072:web:2e651c9ca59b1573d125a5',measurementId:'G-976BL2Q3J5'};
-const app=initializeApp(config);const auth=getAuth(app);const db=getDatabase(app);const adminUID='jXLg1EZvTySQR3Rt6EiaCvG0kdo1';
+const config={apiKey:'AIzaSyBf2YZj7eifWZqteunqG5n1w36UWFDeBmc',authDomain:'gg88-web.firebaseapp.com',databaseURL:'https://gg88-web-default-rtdb.asia-southeast1.firebasedatabase.app',projectId:'gg88-web',storageBucket:'gg88-web.firebasestorage.app',messagingSenderId:'375464555072',appId:'1:375464555072:web:2e651c9ca59b1573d125a5',measurementId:''};
+const app=initializeApp(config);const auth=getAuth(app);const db=getDatabase(app);const adminUID='33sm0kWNUmRERWwxcfJdYEY44PC2';
 export {auth,db,ref,onValue,set,remove,signInWithEmailAndPassword,signOut,onAuthStateChanged,adminUID};
 export function normalizeName(s){return s.trim().toLowerCase().replace(/[^a-z0-9_-]/g,'_')}
 export function watchApproval(name,callback){return onValue(ref(db,'approvedUsers/'+normalizeName(name)),s=>callback({connected:true,approved:s.exists()&&s.val()?.approved===true}),e=>callback({connected:false,approved:false,error:e.message}))}
@@ -395,4 +395,4 @@ document.getElementById('device-default').addEventListener('click',()=>{profile=
 form.addEventListener('submit',event=>{event.preventDefault();profile={};for(let i=0;i<ids.length;i++){profile[ids[i]]=form.elements[['ip','device','os','browser','status','location','protocol'][i]].value;}profile['sys-location']=form.elements.location.value==='VIETNAM' ? form.elements.region.value+', VIETNAM' : form.elements.location.value;try{localStorage.setItem(key,JSON.stringify(profile));document.getElementById('device-feedback').textContent='Đã lưu hồ sơ hiển thị trên trình duyệt này. F5 vẫn giữ lựa chọn.';}catch(e){document.getElementById('device-feedback').textContent='Không thể lưu vào trình duyệt này.';}render();form.hidden=true;});
 render();
 })();
-</script></body></html>
+</script><script type="module" src="./xoaip-chat.js"></script></body></html>
