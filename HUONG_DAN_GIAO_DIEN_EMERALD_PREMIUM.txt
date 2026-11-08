@@ -1,4 +1,4 @@
-XOAIP USER v3.4 — Emerald Premium Responsive
+XOAIP USER  — Emerald Premium Responsive
 
 Thay các file trong ZIP lên repository USER (giữ đúng tên).
 Chỉ đổi HTML/CSS màn hình đăng nhập; xoaip-auth.js, xoaip-chat.js, Firebase gg88-web và ADMIN không đổi.

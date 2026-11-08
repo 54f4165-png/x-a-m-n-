@@ -1,4 +1,4 @@
-XOAIP USER v3.4 - DANG KY BANG TEN TAI KHOAN, KHONG CAN GMAIL
+XOAIP USER  - DANG KY BANG TEN TAI KHOAN, KHONG CAN GMAIL
 
 - Dang ky/Dang nhap bang ten tai khoan (3-24 ky tu ASCII, so, dau _), mat khau it nhat 6 ky tu.
 - Van dung Firebase Authentication Email/Password: he thong tu chuyen ten thanh dia chi noi bo <username>@login.xoaip.online. Khach KHONG can cung cap Gmail hay email.
