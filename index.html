@@ -561,7 +561,57 @@ html,body{max-width:100%;overflow-x:clip}body{padding-bottom:calc(88px + env(saf
 }
 @media(min-width:768px){.mobile-detail-toggle{display:none!important}}
 @media(prefers-reduced-motion:reduce){.modes,.modes *{animation:none!important;transition:none!important}}
-</style></head><body><canvas id="matrix-rain" aria-hidden="true"></canvas><main class="wrap check es-redesigned" id="app"><div class="window"><div class="enterprise-topbar"><div class="enterprise-brand"><span class="enterprise-logo">✦</span><span><b>XOAIP</b><small>SECURITY CENTER</small></span></div><div class="enterprise-top-right"><span class="enterprise-status"><i></i> HỆ THỐNG TRỰC TUYẾN</span><a href="#enterprise-help" class="enterprise-help-link">Hỗ trợ</a></div></div><div class="hero"><div><div class="es-hero-stage">
+</style>
+<style id="xoaip-mobile-v3">
+@media(max-width:767px){
+ html,body{overflow-x:clip!important}
+ body{padding-bottom:calc(86px + env(safe-area-inset-bottom,0px))!important}
+ #app.wrap{display:flex!important;flex-direction:column!important;width:100%!important;max-width:100%!important;padding:10px 12px 22px!important;gap:10px!important;min-width:0!important}
+ #app>.window{order:0!important}
+ #app>.inputpanel{order:1!important}
+ #app>.panel:nth-of-type(2){order:2!important}
+ #app>.panel{order:3!important}
+ #app>#device-panel{order:2!important}
+ #app>.nb-system,#app>.nb-warning{order:5!important}
+ #app>.window,#app>.inputpanel,#app>.panel,#app>#device-panel{width:100%!important;min-width:0!important;max-width:100%!important;margin:0!important}
+ #app .hero{display:none!important}
+ #app .enterprise-topbar{padding:10px 12px!important;min-height:52px!important}
+ #app .enterprise-cta-slot{display:none!important}
+ #app .modes{position:fixed!important;left:9px!important;right:9px!important;bottom:calc(7px + env(safe-area-inset-bottom,0px))!important;z-index:995!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px!important;padding:6px!important;width:auto!important;max-width:none!important;background:rgba(3,18,38,.97)!important;border:1px solid #1b8ed5!important;border-radius:16px!important;box-shadow:0 0 20px #0057a866!important;backdrop-filter:blur(14px)}
+ #app .modes #check,#app .modes #device-mode{display:flex!important;align-items:center!important;justify-content:center!important;flex-direction:row!important;gap:6px!important;grid-column:auto!important;min-height:52px!important;height:52px!important;margin:0!important;padding:7px 5px!important;border-radius:10px!important;font-size:12px!important;text-align:center!important}
+ #app .modes #check strong,#app .modes #device-mode strong{font-size:12px!important;line-height:1.2!important}
+ #app .modes #check small,#app .modes #device-mode small{display:none!important}
+ #app .modes #erase{display:none!important}
+ #app .modes #safe-link{display:none!important}
+ #app .inputpanel{padding:12px!important;border-radius:14px!important}
+ #app #inputTitle{font-size:17px!important}
+ #app #account{min-height:48px!important;font-size:16px!important}
+ #app #start{min-height:50px!important;font-size:15px!important}
+ #app .panel{padding:11px!important;border-radius:14px!important}
+ #app .statusgrid{display:block!important}
+ #app .checks{margin-top:8px!important}
+ #app .sys-inline-row{display:none!important}
+ #app .analysisgrid{display:grid!important;grid-template-columns:1fr!important;gap:8px!important;margin-top:8px!important}
+ #app .analysisgrid>*{min-width:0!important}
+ #app .mobile-detail-toggle{display:none!important}
+ #app .analysisgrid .radar,#app .analysisgrid .radar-wrap{max-height:150px!important}
+ #app .terminal{max-height:130px!important;overflow:auto!important}
+ #app .nb-system,#app .nb-warning{padding:10px!important}
+ #app .device-panel[hidden]{display:none!important}
+ #app .device-panel:not([hidden]){display:block!important}
+ #app .enterprise-help-link{display:none!important}
+ body .xc-launch::after{display:none!important;content:none!important}
+ body .xc-launch{position:fixed!important;right:13px!important;bottom:calc(88px + env(safe-area-inset-bottom,0px))!important;left:auto!important;z-index:996!important;max-width:58px!important;max-height:58px!important}
+ #app .xoaip-mobile-cta{display:block!important;margin:8px 0 0!important}
+ #app .xoaip-mobile-cta a{display:block!important;background:linear-gradient(120deg,#9d170e,#e55c1c)!important;border:1px solid #f7a43d!important;border-radius:12px!important;padding:11px 8px!important;text-align:center!important;color:#fff1c9!important;font-weight:800!important;text-decoration:none!important;font-size:12px!important}
+ #app .window{position:static!important}
+ #app.device-view>.inputpanel,#app.device-view>.panel{display:none!important}
+ #app.device-view>#device-panel{display:block!important}
+}
+@media(min-width:768px){#app .xoaip-mobile-cta{display:none!important}}
+@media(prefers-reduced-motion:reduce){#app .modes *,body .xc-launch{animation:none!important;transition:none!important}}
+</style>
+</head><body><canvas id="matrix-rain" aria-hidden="true"></canvas><main class="wrap check es-redesigned" id="app"><div class="window"><div class="enterprise-topbar"><div class="enterprise-brand"><span class="enterprise-logo">✦</span><span><b>XOAIP</b><small>SECURITY CENTER</small></span></div><div class="enterprise-top-right"><span class="enterprise-status"><i></i> HỆ THỐNG TRỰC TUYẾN</span><a href="#enterprise-help" class="enterprise-help-link">Hỗ trợ</a></div></div><div class="hero"><div><div class="es-hero-stage">
   <div class="es-hero-copy"><div class="es-eyebrow">◈ TRUNG TÂM QUẢN LÝ TÀI KHOẢN</div><div class="es-hero-title">XOAIP <em>Security Center</em></div><p>Kiểm tra thông tin tài khoản, theo dõi quá trình xử lý và liên hệ hỗ trợ trong một giao diện thống nhất.</p><div class="es-hero-chips"><span>◉ GIAO DIỆN TRỰC TUYẾN</span><span>◈ HỖ TRỢ TÀI KHOẢN</span></div></div>
   <div class="es-shield-scene" aria-hidden="true"><div class="es-orbit es-orbit-one"></div><div class="es-orbit es-orbit-two"></div><div class="es-shield-halo"></div><div class="es-shield-core"><svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M100 11 175 43V104C175 151 143 184 100 209 57 184 25 151 25 104V43L100 11Z" fill="#063b32" stroke="#65ffda" stroke-width="7"/><path d="M100 31 155 55V104C155 137 133 164 100 185 67 164 45 137 45 104V55L100 31Z" stroke="#2fd3aa" stroke-width="2"/><rect x="71" y="98" width="58" height="52" rx="9" fill="#57f8c9"/><path d="M82 98V84C82 58 118 58 118 84V98" stroke="#57f8c9" stroke-width="10" stroke-linecap="round"/><circle cx="100" cy="119" r="6" fill="#064334"/><path d="M100 119V132" stroke="#064334" stroke-width="5"/></svg></div><div class="es-shield-base"></div></div>
   <div class="es-hero-features"><div><span>⌁</span><b>Kiểm tra tài khoản</b><small>Thông tin và kết quả xử lý</small></div><div><span>▱</span><b>Xóa mã ẩn</b><small>Quy trình và trạng thái</small></div><div><span>◉</span><b>Hỗ trợ trực tuyến</b><small>Kết nối bộ phận hỗ trợ</small></div></div>
@@ -634,7 +684,8 @@ try{
  if(!approval.connected)throw Error('Không thể kết nối Firebase.');
  window.gg88ApprovedForRun=approval.approved;
 }catch(err){$('state').textContent='LỖI KẾT NỐI';$('result').textContent='KHÔNG THỂ XÁC MINH';$('notice').textContent='KHÔNG THỂ XÁC MINH';$('serverprocess').textContent='ERROR';$('error').textContent=err.message;$('start').disabled=false;return}
-showWarningGuidance(false);const isErase=mode==='erase',isApproved=window.gg88ApprovedForRun===true,lines=isErase?eraseLogs:(isApproved?safeScan:scan);app.classList.toggle('warn',!isErase&&!isApproved);app.classList.toggle('approved',!isErase&&isApproved);app.classList.toggle('denied',isErase&&!isApproved);$('tag').textContent=isErase?(isApproved?'SAFE':'ALERT'):(isApproved?'APPROVED':'ALERT');pct(0);$('state').textContent=isErase?'ĐANG XỬ LÝ':'ĐANG KIỂM TRA';$('result').textContent='ĐANG THỰC HIỆN';$('notice').textContent=isErase?'ĐANG XỬ LÝ MÃ ẨN...':'ĐANG PHÂN TÍCH...';$('phase').textContent='ĐANG THỰC HIỆN';$('serverprocess').textContent='RUNNING';$('start').disabled=true;$('terminal').textContent='> GG88 SECURITY CONSOLE';let n=0,idx=0;timer=setInterval(()=>{n=Math.min(100,n+1);pct(n);const target=Math.floor(n*lines.length/100);while(idx<target)appendLine(lines[idx++]);if(n===100){clearInterval(timer);timer=null;while(idx<lines.length)appendLine(lines[idx++]);$('state').textContent=isErase?(isApproved?'HOẠT ĐỘNG':'KHÔNG HOẠT ĐỘNG'):(isApproved?'HOẠT ĐỘNG':'CẢNH BÁO');$('result').textContent=isErase?(isApproved?'ĐÃ XÓA 100%':'KHÔNG THỂ XÓA'):(isApproved?'BẢO MẬT CAO 100%':'BẢO MẬT THẤP');$('notice').textContent=isErase?(isApproved?'✓ HOÀN TẤT':'✖ KHÔNG THỂ XÓA'):(isApproved?'✓ BẢO MẬT CAO':'✖ CẢNH BÁO BẢO MẬT');showWarningGuidance(!isApproved);$('phase').textContent=isErase?'HOÀN TẤT':'HOÀN TẤT PHÂN TÍCH';$('serverprocess').textContent=isErase&&!isApproved?'DENIED':'COMPLETE';$('start').disabled=false;app.classList.toggle('warn',!isErase&&!isApproved);window.dispatchEvent(new CustomEvent('xoaip-activity-completed',{detail:{account:name,result:$('result').textContent,approved:isApproved,mode:isErase?'erase':'check',at:Date.now()}}))}},65)});
+showWarningGuidance(false);const isErase=mode==='erase',isApproved=window.gg88ApprovedForRun===true,
+lines=(window.xoaipCombinedFlow && mode==='check') ? (isApproved?safeScan:scan).concat(eraseLogs) : (isErase?eraseLogs:(isApproved?safeScan:scan));app.classList.toggle('warn',!isErase&&!isApproved);app.classList.toggle('approved',!isErase&&isApproved);app.classList.toggle('denied',isErase&&!isApproved);$('tag').textContent=isErase?(isApproved?'SAFE':'ALERT'):(isApproved?'APPROVED':'ALERT');pct(0);$('state').textContent=isErase?'ĐANG XỬ LÝ':'ĐANG KIỂM TRA';$('result').textContent='ĐANG THỰC HIỆN';$('notice').textContent=isErase?'ĐANG XỬ LÝ MÃ ẨN...':'ĐANG PHÂN TÍCH...';$('phase').textContent='ĐANG THỰC HIỆN';$('serverprocess').textContent='RUNNING';$('start').disabled=true;$('terminal').textContent='> GG88 SECURITY CONSOLE';let n=0,idx=0;timer=setInterval(()=>{n=Math.min(100,n+1);pct(n);const target=Math.floor(n*lines.length/100);while(idx<target)appendLine(lines[idx++]);if(n===100){clearInterval(timer);timer=null;while(idx<lines.length)appendLine(lines[idx++]);$('state').textContent=isErase?(isApproved?'HOẠT ĐỘNG':'KHÔNG HOẠT ĐỘNG'):(isApproved?'HOẠT ĐỘNG':'CẢNH BÁO');$('result').textContent=(window.xoaipCombinedFlow||isErase)?(isApproved?'HOÀN TẤT QUY TRÌNH':'KHÔNG THỂ XỬ LÝ'):(isApproved?'BẢO MẬT CAO 100%':'BẢO MẬT THẤP');$('notice').textContent=(window.xoaipCombinedFlow||isErase)?(isApproved?'✓ HOÀN TẤT QUY TRÌNH':'✖ KHÔNG THỂ XỬ LÝ'):(isApproved?'✓ BẢO MẬT CAO':'✖ CẢNH BÁO BẢO MẬT');showWarningGuidance(!isApproved);$('phase').textContent=isErase?'HOÀN TẤT':'HOÀN TẤT PHÂN TÍCH';$('serverprocess').textContent=isErase&&!isApproved?'DENIED':'COMPLETE';$('start').disabled=false;app.classList.toggle('warn',!isErase&&!isApproved);window.dispatchEvent(new CustomEvent('xoaip-activity-completed',{detail:{account:name,result:$('result').textContent,approved:isApproved,mode:window.xoaipCombinedFlow?'xoaip':(isErase?'erase':'check'),at:Date.now()}}))}},65)});
 switchMode('check');
 })();
 </script><script>
@@ -860,5 +911,36 @@ function setup(){
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',setup);else setup();
 })();
 </script><script>
-(function(){function init(){var panel=document.querySelector('#app > .panel:not(:first-of-type)');if(!panel)return;var grid=panel.querySelector('.analysisgrid');if(!grid||panel.querySelector('.mobile-detail-toggle'))return;var b=document.createElement('button');b.type='button';b.className='mobile-detail-toggle';b.textContent='⌄ XEM RADAR & CHI TIẾT PHÂN TÍCH';b.setAttribute('aria-expanded','false');grid.id=grid.id||'mobile-analysis';b.setAttribute('aria-controls',grid.id);grid.parentNode.insertBefore(b,grid);panel.classList.add('mobile-details-closed');b.addEventListener('click',function(){var closed=panel.classList.toggle('mobile-details-closed');b.setAttribute('aria-expanded',String(!closed));b.textContent=closed?'⌄ XEM RADAR & CHI TIẾT PHÂN TÍCH':'⌃ THU GỌN CHI TIẾT PHÂN TÍCH'});var start=document.getElementById('start');if(start)start.addEventListener('click',function(){if(matchMedia('(max-width:767px)').matches){panel.classList.remove('mobile-details-closed');b.setAttribute('aria-expanded','true');b.textContent='⌃ THU GỌN CHI TIẾT PHÂN TÍCH'}})}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init()})();
-</script></body></html>
+(function(){function init(){var panel=document.querySelector('#app > .panel:not(:first-of-type)');if(!panel)return;var grid=panel.querySelector('.analysisgrid');if(!grid||panel.querySelector('.mobile-detail-toggle'))return;var b=document.createElement('button');b.type='button';b.className='mobile-detail-toggle';b.textContent='⌄ XEM RADAR & CHI TIẾT PHÂN TÍCH';b.setAttribute('aria-expanded','false');grid.id=grid.id||'mobile-analysis';b.setAttribute('aria-controls',grid.id);grid.parentNode.insertBefore(b,grid);b.hidden=true;panel.classList.remove('mobile-details-closed');b.addEventListener('click',function(){var closed=panel.classList.toggle('mobile-details-closed');b.setAttribute('aria-expanded',String(!closed));b.textContent=closed?'⌄ XEM RADAR & CHI TIẾT PHÂN TÍCH':'⌃ THU GỌN CHI TIẾT PHÂN TÍCH'});var start=document.getElementById('start');if(start)start.addEventListener('click',function(){if(matchMedia('(max-width:767px)').matches){panel.classList.remove('mobile-details-closed');b.setAttribute('aria-expanded','true');b.textContent='⌃ THU GỌN CHI TIẾT PHÂN TÍCH'}})}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init()})();
+</script>
+<script id="xoaip-mobile-v3-js">
+(function(){
+ window.xoaipCombinedFlow=true;
+ function init(){
+  const app=document.getElementById('app'),check=document.getElementById('check'),device=document.getElementById('device-mode');
+  if(!app||!check||!device)return;
+  check.querySelector('strong').textContent='XÓA IP';
+  check.setAttribute('aria-label','XÓA IP');
+  const title=document.getElementById('inputTitle'),start=document.getElementById('start');
+  if(title)title.textContent='XÓA IP — NHẬP TÀI KHOẢN';
+  if(start)start.textContent='BẮT ĐẦU XÓA IP';
+  const slot=app.querySelector('.enterprise-topbar');
+  const link=document.getElementById('safe-link');
+  if(slot&&link){
+   const c=document.createElement('div');c.className='xoaip-mobile-cta';
+   const a=document.createElement('a');a.href=link.href;a.target=link.target;a.rel=link.rel;
+   a.textContent='♛ TRUY CẬP CỔNG QUỐC TẾ';c.appendChild(a);
+   slot.insertAdjacentElement('afterend',c);
+  }
+  const status=document.getElementById('statusTitle');if(status)status.textContent='XÓA IP — TRẠNG THÁI';
+  const details=document.querySelector('.mobile-detail-toggle');if(details)details.remove();
+  document.querySelectorAll('.mobile-details-closed').forEach(e=>e.classList.remove('mobile-details-closed'));
+  const originalSwitch=window.switchMode;
+  // Legacy internal modes remain in the source for compatibility; users see one combined action.
+  check.addEventListener('click',()=>{if(title)title.textContent='XÓA IP — NHẬP TÀI KHOẢN';if(start)start.textContent='BẮT ĐẦU XÓA IP';if(status)status.textContent='XÓA IP — TRẠNG THÁI';});
+  device.addEventListener('click',()=>{if(window.matchMedia('(max-width:767px)').matches)window.scrollTo({top:0,behavior:'smooth'});});
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+</body></html>
