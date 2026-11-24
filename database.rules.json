@@ -44,6 +44,14 @@
           }
         }
       }
+    },
+    "userRegistrations": {
+      ".read": "auth != null && root.child('adminUids').child(auth.uid).val() === true",
+      "$uid": {
+        ".read": "auth != null && (auth.uid === $uid || root.child('adminUids').child(auth.uid).val() === true)",
+        ".write": "auth != null && auth.uid === $uid && newData.exists()",
+        ".validate": "newData.hasChildren(['displayName','email','createdAt','lastLoginAt']) && newData.child('displayName').isString() && newData.child('displayName').val().length >= 2 && newData.child('displayName').val().length <= 40 && newData.child('email').val() === auth.token.email && newData.child('createdAt').isNumber() && (!data.exists() || newData.child('createdAt').val() === data.child('createdAt').val()) && newData.child('lastLoginAt').isNumber() && newData.child('lastLoginAt').val() <= now + 60000"
+      }
     }
   }
 }
