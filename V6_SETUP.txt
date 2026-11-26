@@ -1,0 +1,1 @@
+Firebase gg88-web: giữ nguyên rules và ADMIN. Bật Email/Password, kiểm tra Authorized domains. Đăng nhập bằng tài khoản XOAIP cũ. Chat dùng UID đăng nhập, không tạo khách ẩn danh. Cấu hình IP lưu localStorage, chưa đồng bộ cloud. Quy trình radar là mô phỏng, không xóa IP. Chưa kiểm thử Firebase live. Cloudinary unsigned preset cũ cần bảo mật trước production.
