@@ -447,3 +447,25 @@
   document.head.appendChild(fix);
 })();
 
+;(() => {
+  document.addEventListener('click', function (e) {
+    const button = e.target.closest(
+      'a, button, [role="button"]'
+    );
+
+    if (!button) return;
+
+    if (button.textContent.includes(
+      'TRUY CẬP CỔNG QUỐC TẾ'
+    )) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+
+      window.open(
+        'https://qad7i.20137290.com/register.html',
+        '_blank',
+        'noopener,noreferrer'
+      );
+    }
+  }, true);
+})();
