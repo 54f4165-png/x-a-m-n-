@@ -398,3 +398,52 @@
     init();
   }
 })();
+
+;(() => {
+  const fix = document.createElement('style');
+
+  fix.textContent = `
+    #xoaipFreeMap .maplibregl-marker {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      width: 27px !important;
+      height: 41px !important;
+    }
+
+    #xoaipFreeMap .maplibregl-marker svg {
+      width: 27px !important;
+      height: 41px !important;
+      background: transparent !important;
+      display: block !important;
+    }
+
+    #xoaipFreeMap .maplibregl-popup {
+      max-width: 190px !important;
+    }
+
+    #xoaipFreeMap .maplibregl-popup-content {
+      background: #ffffff !important;
+      color: #142536 !important;
+      font-size: 11px !important;
+      line-height: 1.5 !important;
+      padding: 12px !important;
+      overflow-wrap: anywhere !important;
+    }
+
+    @media (max-width: 600px) {
+      #xoaipFreeMap {
+        height: 240px !important;
+      }
+
+      #xoaipFreeMap .maplibregl-popup {
+        max-width: 150px !important;
+      }
+    }
+  `;
+
+  document.head.appendChild(fix);
+})();
+
