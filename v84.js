@@ -1,3 +1,4 @@
+
 ;(() => {
   const style = document.createElement('style');
 
@@ -26,18 +27,46 @@
       margin: 8px 0;
     }
 
-    #xoaipLeafletMap {
+    #xoaipFreeMap {
       width: 100%;
-      height: 280px;
-      border-radius: 9px;
+      height: 300px;
+      border-radius: 10px;
       overflow: hidden;
       background: #10283c;
+      position: relative;
       z-index: 1;
     }
 
+    #xoaipFreeMap[hidden] {
+      display: none !important;
+    }
+
+    #homeGeoMap .maplibregl-popup-content {
+      color: #142536;
+      border-radius: 10px;
+      padding: 14px;
+      font-size: 12px;
+    }
+
+    #homeGeoMap .maplibregl-popup-close-button {
+      color: #142536;
+    }
+
+    #homeGeoMap .maplibregl-ctrl-attrib {
+      font-size: 10px;
+    }
+
+    #homeGeoMap .maplibregl-ctrl-attrib a {
+      color: #333;
+    }
+
     @media (max-width: 600px) {
-      #xoaipLeafletMap {
-        height: 220px;
+      #xoaipFreeMap {
+        height: 230px;
+      }
+
+      #homeGeoMap {
+        padding: 9px;
       }
     }
   `;
@@ -63,19 +92,27 @@
     }
 
     const oldMap = document.querySelector('.v84-map');
-    if (oldMap) oldMap.style.display = 'none';
+
+    if (oldMap) {
+      oldMap.style.display = 'none';
+    }
 
     const panel = document.createElement('section');
+
     panel.id = 'homeGeoMap';
     panel.className = 'v84-map';
 
     panel.innerHTML = `
       <h3>📍 VỊ TRÍ IP THAM KHẢO</h3>
+
       <p id="geoLocation" role="status">
         Chọn và lưu IP để xem vị trí.
       </p>
-      <div id="xoaipLeafletMap" hidden></div>
+
+      <div id="xoaipFreeMap" hidden></div>
+
       <p id="geoCoords"></p>
+
       <p style="font-size:10px;color:#8aafc7">
         MaxMind GeoLite2 · Vị trí ước tính
         · Không thay đổi IP mạng thật.
@@ -86,37 +123,31 @@
 
     const label = document.getElementById('geoLocation');
     const coords = document.getElementById('geoCoords');
-    const mapBox = document.getElementById('xoaipLeafletMap');
+    const mapBox = document.getElementById('xoaipFreeMap');
 
     let map;
     let marker;
+    let popup;
     let seq = 0;
     let loader;
+    let timer;
+
     const cache = new Map();
 
-    function loadLeaflet() {
+    function loadMapLibre() {
       if (loader) return loader;
 
       loader = new Promise((resolve, reject) => {
         const css = document.createElement('link');
+
         css.rel = 'stylesheet';
         css.href =
-          'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
-
-        css.integrity =
-          'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
-
-        css.crossOrigin = 'anonymous';
+          'https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css';
 
         const script = document.createElement('script');
 
         script.src =
-          'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
-
-        script.integrity =
-          'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
-
-        script.crossOrigin = 'anonymous';
+          'https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js';
 
         Promise.all([
           new Promise((ok, fail) => {
@@ -131,12 +162,18 @@
 
         document.head.appendChild(css);
         document.head.appendChild(script);
+
       }).catch(error => {
         loader = null;
         throw error;
       });
 
       return loader;
+    }
+
+    function scheduleUpdate() {
+      clearTimeout(timer);
+      timer = setTimeout(update, 250);
     }
 
     async function update() {
@@ -165,7 +202,8 @@
         return;
       }
 
-      label.textContent = 'Đang tải dữ liệu vị trí...';
+      label.textContent =
+        'Đang tải dữ liệu vị trí...';
 
       try {
         if (!cache.has(saved.country)) {
@@ -173,14 +211,20 @@
             'v84-map/' + saved.country + '.json'
           );
 
-          if (!res.ok) throw new Error('DATA');
+          if (!res.ok) {
+            throw new Error('DATA');
+          }
 
-          cache.set(saved.country, await res.json());
+          cache.set(
+            saved.country,
+            await res.json()
+          );
         }
 
         if (n !== seq) return;
 
-        const point = cache.get(saved.country)[saved.ip];
+        const point =
+          cache.get(saved.country)[saved.ip];
 
         if (
           !Array.isArray(point) ||
@@ -202,70 +246,113 @@
           saved.province + ', ' + country;
 
         label.textContent =
-          saved.ip + ' · Khu vực đã chọn: ' + location;
+          saved.ip + ' · Khu vực đã chọn: ' +
+          location;
 
-        coords.textContent =
+        const coordinateText =
           'Tọa độ ước tính: ' +
-          lat.toFixed(4) + ', ' + lon.toFixed(4);
+          lat.toFixed(4) + ', ' +
+          lon.toFixed(4);
 
-        await loadLeaflet();
+        coords.textContent = coordinateText;
+
+        await loadMapLibre();
 
         if (n !== seq) return;
 
         mapBox.hidden = false;
 
         if (!map) {
-          map = L.map(mapBox, {
-            zoomControl: true,
-            scrollWheelZoom: false
+          map = new maplibregl.Map({
+            container: mapBox,
+
+            style:
+              'https://tiles.openfreemap.org/styles/liberty',
+
+            center: [lon, lat],
+
+            zoom: 11,
+
+            minZoom: 2,
+
+            maxZoom: 18,
+
+            scrollZoom: false,
+
+            attributionControl: true
           });
 
-         const tiles = L.tileLayer(
-  'https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png',
-  {
-    maxZoom: 19,
-    attribution: '&copy; OpenStreetMap &copy; CARTO'
-  }
-);
+          map.addControl(
+            new maplibregl.NavigationControl(),
+            'top-right'
+          );
 
-          tiles.on('tileerror', () => {
+          map.on('error', event => {
+            console.error(
+              'OPENFREEMAP:',
+              event.error
+            );
+
             coords.textContent =
-              'Không tải được ảnh bản đồ. Tọa độ: ' +
-              lat.toFixed(4) + ', ' + lon.toFixed(4);
+              'Một phần dữ liệu bản đồ chưa tải được.';
           });
 
-          tiles.addTo(map);
+          map.on('idle', () => {
+            if (!mapBox.hidden && map.areTilesLoaded()) {
+              const center = map.getCenter();
+
+              coords.textContent =
+                mapBox.dataset.coordinates || '';
+            }
+          });
         }
 
-        map.setView([lat, lon], 11);
+        mapBox.dataset.coordinates = coordinateText;
 
-        if (marker) map.removeLayer(marker);
+        map.resize();
 
-        marker = L.circleMarker([lat, lon], {
-          radius: 9,
-          color: '#ffffff',
-          weight: 3,
-          fillColor: '#ff304f',
-          fillOpacity: 1
-        }).addTo(map);
+        map.jumpTo({
+          center: [lon, lat],
+          zoom: 11
+        });
 
-        const popup = document.createElement('div');
+        if (marker) marker.remove();
+        if (popup) popup.remove();
 
-        const name = document.createElement('strong');
-        name.textContent = location;
+        const content = document.createElement('div');
 
-        popup.appendChild(name);
-        popup.appendChild(document.createElement('br'));
-        popup.appendChild(
+        const title = document.createElement('strong');
+        title.textContent = location;
+
+        content.appendChild(title);
+
+        content.appendChild(
+          document.createElement('br')
+        );
+
+        content.appendChild(
           document.createTextNode(
             'IP tham khảo: ' + saved.ip
           )
         );
 
-        marker.bindPopup(popup).openPopup();
+        popup = new maplibregl.Popup({
+          offset: 25,
+          closeButton: true,
+          closeOnClick: false
+        }).setDOMContent(content);
+
+        marker = new maplibregl.Marker({
+          color: '#ff304f'
+        })
+          .setLngLat([lon, lat])
+          .setPopup(popup)
+          .addTo(map);
+
+        marker.togglePopup();
 
         requestAnimationFrame(() => {
-          map.invalidateSize();
+          map.resize();
         });
 
       } catch (error) {
@@ -273,18 +360,27 @@
 
         mapBox.hidden = true;
 
-        label.textContent =
-          'Không thể tải bản đồ IP tham khảo.';
+        if (error.message === 'COORDINATES') {
+          label.textContent =
+            'Không có tọa độ cho IP đã chọn.';
+        } else if (error.message === 'DATA') {
+          label.textContent =
+            'Không tải được dữ liệu vị trí IP.';
+        } else {
+          coords.textContent +=
+            ' · Bản đồ tạm thời không tải được.';
+        }
 
         console.error('XOAIP MAP:', error);
       }
     }
 
-    apply.addEventListener('click', () => {
-      setTimeout(update, 150);
-    });
+    apply.addEventListener(
+      'click',
+      scheduleUpdate
+    );
 
-    new MutationObserver(update).observe(ip, {
+    new MutationObserver(scheduleUpdate).observe(ip, {
       childList: true,
       characterData: true,
       subtree: true
@@ -294,7 +390,10 @@
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener(
+      'DOMContentLoaded',
+      init
+    );
   } else {
     init();
   }
