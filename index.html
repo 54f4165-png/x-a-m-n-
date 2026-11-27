@@ -84,7 +84,7 @@ function detect(){
 }
 let actual=detect(),saved=null;
 try{const obj=JSON.parse(localStorage.getItem(KEY)||'null');if(obj&&typeof obj==='object'&&['ip','device','os','browser'].every(k=>typeof obj[k]==='string')&&window.xoaipReferenceIPs?.[obj.country]?.[obj.province]?.some(a=>a[0]===obj.ip))saved=obj;}catch(e){}
-function render(){const v=saved||actual;[v.ip,v.device,v.os,v.browser].forEach((value,i)=>$(ids[i]).textContent=value);$('referenceIp').textContent=actual.ip;$('ipMode').textContent=saved?'(THAM KHẢO)':'';if(saved)$('homeIp').title='Khu vực tham khảo: '+saved.province;else $('homeIp').title='IP mạng thật';const heading=document.querySelector('.home-info-head span');if(heading)heading.textContent=saved?'':'THÔNG TIN THIẾT BỊ BAN ĐẦU';}
+function render(){const v=saved||actual;[v.ip,v.device,v.os,v.browser].forEach((value,i)=>$(ids[i]).textContent=value);$('referenceIp').textContent=actual.ip;$('ipMode').textContent=saved?'':'';if(saved)$('homeIp').title='Khu vực tham khảo: '+saved.province;else $('homeIp').title='IP mạng thật';const heading=document.querySelector('.home-info-head span');if(heading)heading.textContent=saved?'':'THÔNG TIN THIẾT BỊ BAN ĐẦU';}
 render();
 // IP công khai chỉ có thể lấy qua dịch vụ bên ngoài; nếu bị chặn, không bịa IP.
 fetch('https://api.ipify.org?format=json',{cache:'no-store',signal:AbortSignal.timeout?AbortSignal.timeout(6000):undefined}).then(r=>{if(!r.ok)throw Error('unavailable');return r.json()}).then(data=>{if(typeof data.ip==='string'&&/^[0-9a-fA-F:.]{3,45}$/.test(data.ip)){actual.ip=data.ip;render()}}).catch(()=>{actual.ip='Không thể xác định';render()});
