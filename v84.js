@@ -103,7 +103,7 @@
     panel.className = 'v84-map';
 
     panel.innerHTML = `
-      <h3>📍 VỊ TRÍ IP THAM KHẢO</h3>
+      <h3>📍 VỊ TRÍ HIỆN TẠI</h3>
 
       <p id="geoLocation" role="status">
         Chọn và lưu IP để xem vị trí.
@@ -114,8 +114,8 @@
       <p id="geoCoords"></p>
 
       <p style="font-size:10px;color:#8aafc7">
-        MaxMind GeoLite2 · Vị trí ước tính
-        · Không thay đổi IP mạng thật.
+         Vị trí ước tính
+        · 
       </p>
     `;
 
