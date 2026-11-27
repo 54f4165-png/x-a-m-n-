@@ -332,7 +332,7 @@
 
         content.appendChild(
           document.createTextNode(
-            'IP tham khảo: ' + saved.ip
+            'IP hiện tại: ' + saved.ip
           )
         );
 
