@@ -1,0 +1,1 @@
+V7.9: 250 quốc gia/vùng lãnh thổ có IPv4 định vị; tối đa 50 IP đại diện dải mạng mỗi địa điểm. GeoLite2 2026-11-24. IP tham khảo, không xác nhận máy chủ hoạt động, không đổi IP thực. Kiểm tra giấy phép trước khi phân phối/công bố.
