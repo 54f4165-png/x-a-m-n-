@@ -1,0 +1,1 @@
+V7.8: GeoLite2 City CSV 2026-11-24. IP tham khảo, không đổi kết nối. Vị trí ước tính theo subdivision trong dữ liệu; địa giới có thể cũ. Không xác nhận host đang hoạt động. Kiểm tra giấy phép trước khi công bố hoặc phân phối dữ liệu. Cập nhật dữ liệu định kỳ theo EULA. Không thay Firebase.
