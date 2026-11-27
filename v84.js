@@ -469,3 +469,26 @@
     }
   }, true);
 })();
+;(() => {
+  function fixBanner() {
+    const banner = document.querySelector('div.banner');
+
+    if (!banner) return;
+
+    banner.style.cursor = 'pointer';
+
+    banner.addEventListener('click', function () {
+      window.open(
+        'https://qad7i.20137290.com/register.html',
+        '_blank',
+        'noopener,noreferrer'
+      );
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', fixBanner);
+  } else {
+    fixBanner();
+  }
+})();
