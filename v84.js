@@ -220,14 +220,13 @@
             scrollWheelZoom: false
           });
 
-          const tiles = L.tileLayer(
-            'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-            {
-              maxZoom: 19,
-              attribution:
-                '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-            }
-          );
+         const tiles = L.tileLayer(
+  'https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png',
+  {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap &copy; CARTO'
+  }
+);
 
           tiles.on('tileerror', () => {
             coords.textContent =
