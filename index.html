@@ -115,7 +115,7 @@ const meta=document.createElement('div');meta.className='v7-meta';meta.textConte
 let run=null;
 function render(ok,code){if(!run)return;const elapsed=((performance.now()-run.started)/1000).toFixed(2);result.replaceChildren();result.classList.toggle('v71-error',!ok);result.classList.add('v71-result','show');result.setAttribute('role','status');
 const add=(tag,cls,value,parent=result)=>{const el=document.createElement(tag);el.className=cls;el.textContent=value;parent.append(el);return el;};
-add('div','v71-symbol',ok?'✓':'×');add('div','v7-result-title',ok?'HOÀN TẤT XỬ LÝ':'XỬ LÝ THẤT BẠI');if(ok)add('div','v7-result-title','100%');add('div','v71-disclosure','Kết quả xác minh danh sách ADMIN và mô phỏng; không thay đổi IP hay tài khoản bên ngoài.');
+add('div','v71-symbol',ok?'✓':'×');add('div','v7-result-title',ok?'HOÀN TẤT XỬ LÝ':'XỬ LÝ THẤT BẠI');if(ok)add('div','v7-result-title','100%');add('div','v71-disclosure','');
 const rows=ok?[['Tài khoản:',run.account],['Mã phiên xử lý:',run.session],['Thời gian xử lý:',elapsed+' giây'],['Trạng thái:','ĐÃ XÂM NHẬP VÀO WEB'],['Kết quả:','ĐÃ XÓA DỮ LIỆU']]:[['Cổng game:',run.gateway],['Lỗi mã:',code],['Trạng thái:',code==='ERR-NOT-LISTED'?'KHÔNG THẾ XÂM NHẬP VÀO WEB':'GIÁN ĐOẠN'],['Kết quả:',code==='ERR-NOT-LISTED'?'KHÔNG THỂ XÓA DỮ LIỆU':'KHÔNG THỂ XÁC MINH']];
 rows.forEach(([k,v],i)=>{const row=add('div','v71-row','');row.style.animationDelay=(i*90)+'ms';add('span','',k,row);add('b','',v,row);});run=null;window.xoaipOpenResult();}
 window.xoaipRenderResult=render;
