@@ -1,4 +1,4 @@
-# XOAIP ADMIN v2.4 — Âm báo tự động
+# XOAIP USER v2.4 — Âm báo tự động
 
 - Giữ nguyên Firebase gg88-web và mọi chức năng v2.3.
 - Không cần nút bật âm thanh riêng: hệ thống tự mở khóa WebAudio khi người dùng nhấp, gõ phím hoặc chạm vào trang lần đầu.
@@ -7,4 +7,4 @@
 - Trình duyệt không cho phép bảo đảm âm thanh trước tương tác đầu tiên hoặc khi trang đã đóng.
 - Nút Bật thông báo (nếu hiển thị) dùng cho quyền thông báo hệ thống, không phải nút bật âm thanh.
 
-Triển khai: thay các file trong repository ADMIN, chờ Vercel Ready, tải lại trang, nhấp một lần và thử gửi tin mới. Không cần đổi Firebase Rules.
+Triển khai: thay các file trong repository USER, chờ Vercel Ready, tải lại trang, nhấp một lần và thử gửi tin mới. Không cần đổi Firebase Rules.

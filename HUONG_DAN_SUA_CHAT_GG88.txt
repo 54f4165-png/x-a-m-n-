@@ -1,4 +1,4 @@
-XOAIP ADMIN v1.9 - FIX CHAT - FIREBASE gg88-web
+XOAIP USER v1.9 - FIX CHAT - FIREBASE gg88-web
 
 Đã sửa xoaip-chat.js: cấu hình chat dùng cùng dự án gg88-web với index.html.
 KHÔNG sử dụng admin008-75abc.

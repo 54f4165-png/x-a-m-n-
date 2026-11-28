@@ -1,4 +1,4 @@
-XOAIP ADMIN v1.9 - SUA QUYEN CHAT - Firebase gg88-web
+XOAIP USER v1.9 - SUA QUYEN CHAT - Firebase gg88-web
 
 1. Firebase gg88-web > Authentication: bật Anonymous cho USER, Email/Password cho ADMIN.
 2. Firebase gg88-web > Realtime Database > Data: adminUids/<UID thực của tài khoản ADMIN> = Boolean true.
