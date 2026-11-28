@@ -1,0 +1,9 @@
+{
+  "name": "xoaip-admin-analytics",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "firebase-admin": "^13.0.0",
+    "@google-analytics/data": "^5.0.0"
+  }
+}

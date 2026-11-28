@@ -1,0 +1,8 @@
+XOAIP ADMIN - FIX BAO CAO GA4
+
+Da sua api/analytics.js: them dimension dateRange va dat ten today/week/month; doc ket qua theo ten thay vi index khong ton tai.
+Khoang 7 ngay dung 6daysAgo -> today, 30 ngay dung 29daysAgo -> today.
+Giu nguyen giao dien, Firebase, danh sach user va cac file khac.
+
+Trien khai: tai ZIP len repository / Vercel nhu truoc, redeploy Production. Dang nhap ADMIN, bam Cap nhat so lieu. Neu GA4 moi duoc tao, bao cao lich su co the chua co du lieu ngay lap tuc.
+Khong can thay doi IAM, Firebase rules hay service account.

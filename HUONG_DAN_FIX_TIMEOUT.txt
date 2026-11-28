@@ -1,0 +1,15 @@
+XOAIP ADMIN - FIX API TIMEOUT
+
+1. Tải ZIP này lên GitHub/Vercel để triển khai bản mới.
+2. Vercel Production Environment Variables phải có:
+   GOOGLE_SERVICE_ACCOUNT_JSON = toàn bộ JSON khóa service account xoaip-analytics của project gg88-web.
+   GA4_PROPERTY_ID = 561844173 (xác nhận lại trong Google Analytics).
+3. Tài khoản service account trong JSON phải có quyền Viewer đối với GA4 property.
+4. Firebase Realtime Database URL phải thuộc cùng project gg88-web.
+5. Deploy lại, đăng nhập ADMIN, nhấn CẬP NHẬT SỐ LIỆU.
+6. Nếu lỗi còn, kiểm tra Vercel Runtime Logs: API giờ sẽ trả lỗi cụ thể trong khoảng 12 giây mỗi bước thay vì treo đến 300 giây.
+
+Không chia sẻ private_key lên chat hoặc commit vào GitHub.
+Nếu khóa JSON từng bị lộ công khai, hãy thu hồi và tạo khóa mới.
+
+LƯU Ý: Bản sửa này xử lý tình trạng treo và tăng khả năng chẩn đoán. Nó không tự cấp quyền GA4 hay sửa khóa JSON sai.

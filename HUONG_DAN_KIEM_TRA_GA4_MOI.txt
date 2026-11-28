@@ -1,0 +1,10 @@
+XOAIP ADMIN - BAN CHAN DOAN GA4
+
+1. Trien khai ZIP len Vercel, giu nguyen Environment Variables.
+2. Dang nhap ADMIN > F12 > Network > analytics > Response.
+3. Xem diagnostic.propertyId (phai trung GA4 Property ID), diagnostic.reportRows, diagnostic.note.
+4. Neu reportRows.month=0 nhung realtime.users>0: GA4 Realtime va bao cao chuan la hai he thong xu ly khac nhau. Cho du lieu xu ly 24-48 gio, kiem tra dung property, data stream, bo loc, ngay va mui gio.
+5. Neu GA4 Reports tren giao dien Analytics co so lieu nhung API van khong co, doi chieu propertyId va quyen Viewer cua service account trong GA4.
+6. Khong dang private key len GitHub hay gui private key qua chat. Neu khoa da lo, thu hoi va tao khoa moi.
+
+Ban nay chi bo sung diagnostic vao JSON API, khong thay doi giao dien, Firebase, danh sach USER hay logic dang nhap. Khong tu tao so lieu hoac bien 0 thanh so lieu gia.

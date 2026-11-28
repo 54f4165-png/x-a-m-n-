@@ -1,0 +1,20 @@
+XOAIP AUTO BOT V2.6
+
+1. Upload ZIP ADMIN lên repo admin-xoamaan.vercel.app. Giữ biến GOOGLE_SERVICE_ACCOUNT_JSON hiện tại.
+2. Upload ZIP USER lên repo xoaip.online.
+3. Đảm bảo Firebase service account có quyền Realtime Database.
+4. Trong ADMIN, đăng nhập và bật BOT.
+5. Khách gửi tin nhắn mới: USER gọi API ADMIN để tạo phản hồi tự động (một lần mỗi lần bật BOT và mỗi phòng).
+6. Nếu tên miền ADMIN đổi, sửa URL https://admin-xoamaan.vercel.app/api/auto-bot trong xoaip-chat.js phía USER.
+7. Nếu tên miền USER đổi, sửa Access-Control-Allow-Origin trong api/auto-bot.js.
+
+NỘI DUNG BOT:
+Xin chào bạn! 👋
+
+Hiện tại kỹ thuật web đang tạm vắng mặt nên chưa thể hỗ trợ trực tiếp.
+
+Bạn vui lòng để lại nội dung cần hỗ trợ. Kỹ thuật sẽ kiểm tra và phản hồi sớm nhất khi quay lại.
+
+Cảm ơn bạn đã kiên nhẫn chờ đợi! ❤️
+
+🕐 Khung giờ kỹ thuật làm việc: 13h – 23h

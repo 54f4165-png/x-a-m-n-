@@ -1,0 +1,10 @@
+XOAIP ADMIN - BO SUNG DIEU KHIEN AUTO BOT
+
+1. Upload toan bo noi dung thu muc nay vao repository GitHub ADMIN (khong upload thu muc boc ngoai).
+2. Vercel can co GOOGLE_SERVICE_ACCOUNT_JSON (service account Firebase gg88-web).
+3. Firebase Realtime Database can co adminUids/<UID ADMIN> = true va rules cho phep ADMIN doc autoBot/config.
+4. Dang nhap ADMIN: khung BOT se hien, va hien ro loi neu thieu quyen hoac rules.
+5. Bat BOT, mo trang USER thu nghiem bang tai khoan khach, gui tin nhan.
+6. Neu USER chua goi /api/auto-bot khi gui tin nhan, can cap nhat USER V2.6 tuong ung.
+
+Luu y: Khong ghi de thay doi rieng tu cac commit chua dong bo trong GitHub Desktop.
