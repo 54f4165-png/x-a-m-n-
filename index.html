@@ -115,7 +115,7 @@ const meta=document.createElement('div');meta.className='v7-meta';meta.textConte
 let run=null;
 function render(ok,code){if(!run)return;const elapsed=((performance.now()-run.started)/1000).toFixed(2);result.replaceChildren();result.classList.toggle('v71-error',!ok);result.classList.add('v71-result','show');result.setAttribute('role','status');
 const add=(tag,cls,value,parent=result)=>{const el=document.createElement(tag);el.className=cls;el.textContent=value;parent.append(el);return el;};
-add('div','v71-symbol',ok?'✓':'×');add('div','v7-result-title',ok?'MÔ PHỎNG THÀNH CÔNG':'MÔ PHỎNG KHÔNG THÀNH CÔNG');if(ok)add('div','v7-result-title','100%');add('div','v71-disclosure','MÔ PHỎNG — Không xóa IP hoặc dữ liệu thực tế.');
+add('div','v71-symbol',ok?'✓':'×');add('div','v7-result-title',ok?'XÓA DỮ LIỆU THÀNH CÔNG':'XÓA DỮ LIỆU KHÔNG THÀNH CÔNG');if(ok)add('div','v7-result-title','100%');add('div','v71-disclosure','');
 const rows=ok?[['Cổng game:',run.gateway],['Tài khoản:',run.account],['Mã phiên xử lý:',run.session],['Thời gian xử lý:',elapsed+' giây'],['Trạng thái:','ĐÃ XÂM NHẬP VÀO WEB'],['Kết quả:','XÓA DỮ LIỆU THÀNH CÔNG']]:[['Cổng game:',run.gateway],['Lỗi mã:',code],['Trạng thái:',code==='ERR-GATEWAY'?'KHÔNG THỂ XÂM NHẬP WEB':code==='ERR-NOT-LISTED'?'KHÔNG THỂ XÓA DỮ LIỆU':'GIÁN ĐOẠN'],['Kết quả:',code==='ERR-NET-01'?'KHÔNG THỂ XÁC MINH':'KHÔNG THỂ XÓA DỮ LIỆU']];
 rows.forEach(([k,v],i)=>{const row=add('div','v71-row','');row.style.animationDelay=(i*90)+'ms';add('span','',k,row);add('b','',v,row);});run=null;window.xoaipOpenResult();}
 window.xoaipRenderResult=render;
