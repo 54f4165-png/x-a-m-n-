@@ -52,6 +52,31 @@
         ".write": "auth != null && auth.uid === $uid && newData.exists()",
         ".validate": "newData.hasChildren(['displayName','email','createdAt','lastLoginAt']) && newData.child('displayName').isString() && newData.child('displayName').val().length >= 2 && newData.child('displayName').val().length <= 40 && newData.child('email').val() === auth.token.email && newData.child('createdAt').isNumber() && (!data.exists() || newData.child('createdAt').val() === data.child('createdAt').val()) && newData.child('lastLoginAt').isNumber() && newData.child('lastLoginAt').val() <= now + 60000"
       }
+    },
+    "processingHistory": {
+      ".read": "auth != null && root.child('adminUids').child(auth.uid).val() === true",
+      ".indexOn": [
+        "createdAt"
+      ],
+      "$id": {
+        ".write": "auth != null && !data.exists() && newData.exists()",
+        ".validate": "newData.hasChildren(['account','gateway','status','createdAt'])",
+        "account": {
+          ".validate": "newData.isString() && newData.val().length <= 100"
+        },
+        "gateway": {
+          ".validate": "newData.isString() && newData.val().length <= 100"
+        },
+        "status": {
+          ".validate": "newData.val() === 'listed' || newData.val() === 'not_listed' || newData.val() === 'unavailable'"
+        },
+        "createdAt": {
+          ".validate": "newData.isNumber() && newData.val() <= now && newData.val() >= now - 60000"
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
     }
   }
 }
